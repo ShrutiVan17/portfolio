@@ -8,14 +8,14 @@
 
   <meta
     name="description"
-    content="Portfolio website for Shruti Vanparia, a UT Dallas Business Analytics graduate building AI agents, dashboards, ML models, and analytics automation."
+    content="Portfolio of Shruti Vanparia — AI, data analytics, machine learning, business intelligence, and decision-system projects."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   >
 
@@ -24,13 +24,35 @@
 
 <body>
 
-  <header class="site-header">
+  <!-- Scroll progress -->
+  <div class="scroll-progress" aria-hidden="true">
+    <span id="scrollProgress"></span>
+  </div>
 
-    <a class="brand" href="#top" aria-label="Shruti Vanparia home">
+  <!-- Intro animation -->
+  <div class="intro-screen" id="introScreen" aria-hidden="true">
+    <div class="intro-logo">
+      <span>S</span>
+      <span>V</span>
+    </div>
+
+    <div class="intro-line"></div>
+
+    <p>AI · DATA · DECISION SYSTEMS</p>
+  </div>
+
+  <!-- Background glow -->
+  <div class="page-glow glow-one" aria-hidden="true"></div>
+  <div class="page-glow glow-two" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+
+    <a class="brand magnetic" href="#top" aria-label="Shruti Vanparia home">
 
       <span class="brand-mark">SV</span>
 
-      <span>
+      <span class="brand-copy">
         <strong>Shruti Vanparia</strong>
         <small>AI + Data Analytics</small>
       </span>
@@ -39,6 +61,7 @@
 
     <button
       class="menu-toggle"
+      id="menuToggle"
       type="button"
       aria-label="Open navigation"
       aria-expanded="false"
@@ -52,79 +75,85 @@
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#capabilities">Skills</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
 
     </nav>
 
     <a
-      class="hire-button"
+      class="hire-button magnetic"
       href="mailto:shrutivanparia171@gmail.com"
     >
-      <span></span>
-      Hire me
+      <span class="status-dot"></span>
+      Let’s talk
     </a>
 
   </header>
 
-
   <main id="top">
 
     <!-- HERO -->
-
     <section class="hero section-pad">
 
       <div class="hero-inner">
 
-        <p class="pill">
-          UT Dallas Business Analytics graduate open to analyst roles
-        </p>
+        <div class="hero-kicker reveal-up">
+          <span class="live-dot"></span>
+          AI · ANALYTICS · BUSINESS SYSTEMS
+        </div>
 
-        <h1>
-          Data, AI, and business analytics work built for real decisions.
+        <h1 class="hero-title">
+
+          <span class="hero-line">
+            I turn
+            <em>messy problems</em>
+          </span>
+
+          <span class="hero-line">
+            into systems
+          </span>
+
+          <span class="hero-line">
+            people can
+            <strong>use.</strong>
+          </span>
+
         </h1>
 
-        <p class="hero-copy">
-          I connect business requirements, SQL data pipelines, dashboards,
-          ML models, AI agents, and operational analysis so teams can move
-          from messy questions to useful decisions.
+        <p class="hero-copy reveal-up">
+          I combine business context, Python, SQL, machine learning,
+          AI agents, dashboards, APIs, and cloud workflows to build
+          decision systems that turn complex information into clear action.
         </p>
 
+        <div class="hero-actions reveal-up">
 
-        <div class="hero-actions">
-
-          <a
-            class="primary-action"
-            href="#projects"
-          >
-            View projects
+          <a class="primary-action magnetic" href="#projects">
+            Explore my work
+            <span>↘</span>
           </a>
 
-          <!-- FIXED RESUME PATH -->
-
           <a
-            class="secondary-action"
-            href="resu.pdf"
+            class="secondary-action magnetic"
+            href="assets/Shruti-Vanparia-Resume.pdf"
             target="_blank"
             rel="noopener"
           >
-            Download resume
+            View resume
+            <span>↗</span>
           </a>
 
         </div>
 
-
-        <div
-          class="social-row"
-          aria-label="Professional links"
-        >
+        <div class="social-row reveal-up">
 
           <a
             href="https://linkedin.com/in/shruti-17s"
             target="_blank"
             rel="noopener"
           >
-            LinkedIn
+            LinkedIn ↗
           </a>
 
           <a
@@ -132,224 +161,333 @@
             target="_blank"
             rel="noopener"
           >
-            GitHub
+            GitHub ↗
           </a>
 
-          <a
-            href="mailto:shrutivanparia171@gmail.com"
-          >
-            Email me
+          <a href="mailto:shrutivanparia171@gmail.com">
+            Email ↗
           </a>
 
         </div>
 
-
-        <div
-          class="role-cloud"
-          aria-label="Target roles"
-        >
-
-          <span>Business Analyst</span>
-          <span>Data Analyst</span>
-          <span>ML Analyst</span>
-          <span>AI Analyst</span>
-          <span>Operations Analyst</span>
-          <span>Data Science</span>
-
-        </div>
-
-
-        <div
-          class="hero-proof"
-          aria-label="Portfolio strengths"
-        >
+        <div class="hero-proof reveal-up">
 
           <span>
-            <strong>15+</strong>
-            analytics and AI projects
+            <strong>Python + SQL</strong>
+            Data workflows
           </span>
 
           <span>
-            <strong>MS</strong>
-            Business Analytics graduate from UT Dallas
+            <strong>GenAI</strong>
+            Agent systems
           </span>
 
           <span>
-            <strong>Tools</strong>
-            Python, SQL, Power BI, Tableau, GenAI
+            <strong>ML</strong>
+            Predictive models
+          </span>
+
+          <span>
+            <strong>BI</strong>
+            Decision dashboards
           </span>
 
         </div>
 
       </div>
 
-
-      <!-- FEATURED PROJECTS -->
-
+      <!-- Hero visual -->
       <aside
-        class="hero-card"
-        aria-label="Profile summary"
+        class="hero-card interactive-card"
+        id="heroCard"
+        aria-label="AI decision workflow"
       >
+
+        <div class="hero-card-glow"></div>
 
         <div class="showcase-header">
 
-          <p class="card-label">
-            Selected work
-          </p>
+          <div>
+            <span class="card-label">LIVE DECISION SYSTEM</span>
+            <h2>From raw signal to action.</h2>
+          </div>
 
-          <h2>
-            AI agents, dashboards, ML models, and business decision systems
-          </h2>
-
-        </div>
-
-
-        <!-- FIXED IMAGE PATHS -->
-
-        <div
-          class="showcase-grid"
-          aria-label="Featured project visuals"
-        >
-
-          <img
-            class="showcase-main"
-            src="project-parksafe-ai.webp"
-            alt="ParkSafe AI project preview"
-          >
-
-          <img
-            src="project-credit-fraud-dashboard.webp"
-            alt="Fraud dashboard project preview"
-          >
-
-          <img
-            src="project-dental-ai-real.webp"
-            alt="Dental AI assistant project preview"
-          >
+          <div class="system-status">
+            <span></span>
+            ACTIVE
+          </div>
 
         </div>
 
+        <div class="decision-flow">
 
-        <ul class="quick-list">
+          <article class="flow-node flow-node-one">
+            <span>01</span>
+            <strong>INPUT</strong>
+            <p>Business problem</p>
+          </article>
 
-          <li>
-            <strong>Business:</strong>
-            requirements, process mapping, KPI reporting
-          </li>
+          <span class="flow-arrow">→</span>
 
-          <li>
-            <strong>Data:</strong>
-            Python, SQL, R, SAS, Excel
-          </li>
+          <article class="flow-node flow-node-two">
+            <span>02</span>
+            <strong>ANALYZE</strong>
+            <p>Data + models</p>
+          </article>
 
-          <li>
-            <strong>BI:</strong>
-            Power BI, Tableau, dashboards, storytelling
-          </li>
+          <span class="flow-arrow">→</span>
 
-          <li>
-            <strong>AI:</strong>
-            ML, GenAI, NLP, Vertex AI, AWS Lambda
-          </li>
+          <article class="flow-node flow-node-three">
+            <span>03</span>
+            <strong>DECIDE</strong>
+            <p>Actionable output</p>
+          </article>
 
-        </ul>
+        </div>
+
+        <div class="mini-terminal">
+
+          <div class="terminal-head">
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <small>decision_agent.py</small>
+          </div>
+
+          <div class="terminal-body">
+
+            <p>
+              <span>01</span>
+              problem =
+              <strong>"messy operational data"</strong>
+            </p>
+
+            <p>
+              <span>02</span>
+              model.fit(
+              <strong>business_context</strong>
+              )
+            </p>
+
+            <p>
+              <span>03</span>
+              recommendation =
+              <strong>actionable</strong>
+            </p>
+
+            <p class="terminal-success">
+              ✓ decision system ready
+            </p>
+
+          </div>
+
+        </div>
 
       </aside>
 
     </section>
 
+    <!-- MOVING SKILLS STRIP -->
+    <section class="logo-strip" aria-label="Skills and tools">
 
-    <!-- TOOLS -->
+      <div class="marquee-track">
 
-    <section
-      class="logo-strip"
-      aria-label="Skills and tools"
-    >
+        <span>Python</span>
+        <i>✦</i>
 
-      <span>Python</span>
-      <span>SQL</span>
-      <span>Vertex AI</span>
-      <span>AWS Lambda</span>
-      <span>Power BI</span>
-      <span>Tableau</span>
-      <span>ML</span>
+        <span>SQL</span>
+        <i>✦</i>
+
+        <span>Generative AI</span>
+        <i>✦</i>
+
+        <span>Vertex AI</span>
+        <i>✦</i>
+
+        <span>FastAPI</span>
+        <i>✦</i>
+
+        <span>Power BI</span>
+        <i>✦</i>
+
+        <span>Machine Learning</span>
+        <i>✦</i>
+
+        <span>GCP</span>
+        <i>✦</i>
+
+        <span>Tableau</span>
+        <i>✦</i>
+
+        <span>REST APIs</span>
+        <i>✦</i>
+
+        <!-- duplicated for seamless animation -->
+
+        <span>Python</span>
+        <i>✦</i>
+
+        <span>SQL</span>
+        <i>✦</i>
+
+        <span>Generative AI</span>
+        <i>✦</i>
+
+        <span>Vertex AI</span>
+        <i>✦</i>
+
+        <span>FastAPI</span>
+        <i>✦</i>
+
+        <span>Power BI</span>
+        <i>✦</i>
+
+      </div>
 
     </section>
-
 
     <!-- ABOUT -->
+    <section id="about" class="section-pad about-grid">
 
-    <section
-      id="about"
-      class="section-pad about-grid"
-    >
-
-      <div>
+      <div data-reveal>
 
         <p class="section-kicker">
-          About
+          ABOUT / 01
         </p>
 
         <h2>
-          One portfolio, multiple analyst paths.
+          Technical enough to build.
+          <br>
+          Business-minded enough to know
+          <span>what matters.</span>
         </h2>
 
       </div>
 
-
-      <div class="about-copy">
+      <div class="about-copy" data-reveal>
 
         <p>
-          I am a UT Dallas Business Analytics graduate with a Data Science
-          and AI background. I enjoy building tools that are useful,
-          explainable, and easy for non-technical teams to trust.
-          I am targeting Business Analyst, Data Analyst, ML/AI Analyst,
-          Data Science, and Operations Analyst roles.
+          My work sits between analytics, AI, software,
+          and operations. I like problems where the
+          question is unclear at first and the useful
+          answer requires more than simply building
+          another dashboard.
         </p>
 
         <p>
-          My strongest portfolio direction is business and data transformation:
-          understanding the workflow, preparing the data, building the model
-          or dashboard, and explaining what action the team should take next.
+          I start by understanding the workflow,
+          identify the real decision that needs to be
+          improved, prepare the data, build the right
+          technical solution, and make the result easy
+          for non-technical people to use.
         </p>
+
+        <div class="about-metrics">
+
+          <article>
+            <strong>50K+</strong>
+            <span>records analyzed</span>
+          </article>
+
+          <article>
+            <strong>0.919</strong>
+            <span>ML model R²</span>
+          </article>
+
+          <article>
+            <strong>5</strong>
+            <span>ranked AI outputs</span>
+          </article>
+
+        </div>
 
       </div>
 
     </section>
 
-
     <!-- EXPERIENCE -->
+    <section id="experience" class="section-pad experience-section">
 
-    <section
-      id="experience"
-      class="section-pad"
-    >
-
-      <div class="section-heading">
+      <div class="section-heading" data-reveal>
 
         <p class="section-kicker">
-          Experience
+          EXPERIENCE / 02
         </p>
 
         <h2>
-          Work that shaped how I solve problems.
+          Work that shaped
+          <span>how I solve problems.</span>
         </h2>
 
       </div>
-
 
       <div class="timeline">
 
-        <article class="timeline-card">
+        <div class="timeline-progress">
+          <span id="timelineProgress"></span>
+        </div>
 
-          <div>
+        <article class="timeline-card interactive-card" data-reveal>
+
+          <div class="timeline-left">
 
             <span class="date">
-              Jan 2023 - May 2024
+              JUL 2026 — PRESENT
             </span>
 
             <h3>
-              Manufacturing Operations Analyst
+              Data Operations Analyst
+            </h3>
+
+            <p>
+              Pinnacle Arc LLC
+            </p>
+
+          </div>
+
+          <div class="timeline-right">
+
+            <p>
+              Working with operational datasets using
+              SQL, Python, Excel, and Power BI to improve
+              data quality, reporting consistency, and
+              business decision-making.
+            </p>
+
+            <ul>
+
+              <li>
+                Validate and reconcile operational data
+                across multiple systems.
+              </li>
+
+              <li>
+                Investigate missing, duplicate, and
+                inconsistent records.
+              </li>
+
+              <li>
+                Build recurring reports and translate
+                reporting issues into corrective actions.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </article>
+
+        <article class="timeline-card interactive-card" data-reveal>
+
+          <div class="timeline-left">
+
+            <span class="date">
+              JAN 2023 — MAY 2024
+            </span>
+
+            <h3>
+              Data & Operations Analyst
             </h3>
 
             <p>
@@ -358,214 +496,539 @@
 
           </div>
 
+          <div class="timeline-right">
 
-          <ul>
-
-            <li>
-              Reconciled inventory and material records across Excel and ERP
-              systems, traced data mismatches to their source, and corrected
-              issues before recurring reports were released.
-            </li>
-
-            <li>
-              Prepared production and inventory reports tracking volume
-              changes, material constraints, schedule exceptions, and
-              operational priorities.
-            </li>
-
-            <li>
-              Reviewed inputs used by automated production scheduling
-              workflows and identified missing or inconsistent values before
-              downstream system updates.
-            </li>
-
-            <li>
-              Compared material availability with production schedules and
-              communicated data-backed risks, constraints, and follow-up
-              priorities to stakeholders.
-            </li>
-
-          </ul>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-
-    <section
-      id="projects"
-      class="section-pad projects-section"
-    >
-
-      <div class="section-heading center">
-
-        <p class="section-kicker">
-          Projects
-        </p>
-
-        <h2>
-          Choose a project lane.
-        </h2>
-
-        <p>
-          Click a category to open the projects that match that role direction.
-        </p>
-
-      </div>
-
-
-      <div class="project-explorer">
-
-        <div
-          class="category-tabs"
-          id="categoryTabs"
-          aria-label="Project categories"
-        ></div>
-
-
-        <div class="category-panel">
-
-          <div class="category-summary">
-
-            <span id="categoryCount">
-              0 projects
-            </span>
-
-            <h3 id="categoryTitle">
-              AI Agent / Chatbot / GenAI Projects
-            </h3>
-
-            <p id="categoryDescription">
-              Projects that show chatbot workflows, AI decision support,
-              cloud prototypes, prompt flows, and automation use cases.
+            <p>
+              Worked in a manufacturing environment
+              across production, inventory, materials,
+              ERP data, and scheduling workflows.
             </p>
+
+            <ul>
+
+              <li>
+                Reconciled ERP and Excel records across
+                materials, inventory, and production.
+              </li>
+
+              <li>
+                Identified shortages, bottlenecks,
+                schedule exceptions, and inconsistent inputs.
+              </li>
+
+              <li>
+                Converted operational information into
+                structured reports and clear follow-up actions.
+              </li>
+
+            </ul>
 
           </div>
 
-
-          <div
-            class="project-grid"
-            id="projectGrid"
-            aria-live="polite"
-          ></div>
-
-        </div>
+        </article>
 
       </div>
 
     </section>
 
+    <!-- PROJECTS -->
+    <section id="projects" class="section-pad projects-section">
 
-    <!-- CAPABILITIES -->
-
-    <section class="section-pad capabilities">
-
-      <div class="section-heading center">
+      <div class="section-heading center" data-reveal>
 
         <p class="section-kicker">
-          Capabilities
+          SELECTED WORK / 03
         </p>
 
         <h2>
-          I bring data projects to life.
+          Projects built around
+          <span>real decisions.</span>
+        </h2>
+
+        <p>
+          AI, analytics, operations, and machine learning projects
+          focused on making information more useful.
+        </p>
+
+      </div>
+
+      <div class="filter-row" data-reveal>
+
+        <button
+          class="filter active"
+          type="button"
+          data-filter="all"
+        >
+          All
+        </button>
+
+        <button
+          class="filter"
+          type="button"
+          data-filter="ai"
+        >
+          AI / GenAI
+        </button>
+
+        <button
+          class="filter"
+          type="button"
+          data-filter="analytics"
+        >
+          Analytics
+        </button>
+
+        <button
+          class="filter"
+          type="button"
+          data-filter="operations"
+        >
+          Operations
+        </button>
+
+      </div>
+
+      <div class="project-grid">
+
+        <!-- ParkSafe -->
+        <article
+          class="project-card featured interactive-card"
+          data-category="ai analytics"
+          data-reveal
+        >
+
+          <div class="project-number">
+            01
+          </div>
+
+          <div class="project-visual parksafe-visual">
+
+            <div class="route-map">
+
+              <span class="route-dot dot-a"></span>
+              <span class="route-dot dot-b"></span>
+              <span class="route-dot dot-c"></span>
+
+              <div class="route-line route-one"></div>
+              <div class="route-line route-two"></div>
+
+              <div class="parking-result">
+
+                <small>AI RECOMMENDATION</small>
+
+                <strong>
+                  OPTION #1
+                </strong>
+
+                <p>
+                  4 min walk · $6.40
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="project-body">
+
+            <span class="project-type">
+              AI DECISION AGENT
+            </span>
+
+            <h3>
+              ParkSafe AI
+            </h3>
+
+            <p>
+              Real-time parking decision system combining
+              live occupancy, pricing, location, routing,
+              walking distance, ratings, and risk data to
+              rank the five strongest parking choices.
+            </p>
+
+            <div class="project-metrics">
+
+              <span>
+                <strong>5</strong>
+                ranked outputs
+              </span>
+
+              <span>
+                <strong>Live</strong>
+                API data
+              </span>
+
+            </div>
+
+            <div class="tag-row">
+
+              <span>Python</span>
+              <span>Gemini</span>
+              <span>Vertex AI</span>
+              <span>Elasticsearch</span>
+              <span>REST APIs</span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- Dental -->
+        <article
+          class="project-card interactive-card"
+          data-category="ai analytics"
+          data-reveal
+        >
+
+          <div class="project-number">
+            02
+          </div>
+
+          <div class="project-visual dashboard-visual">
+
+            <div class="mini-dashboard">
+
+              <div class="dashboard-top">
+
+                <span>
+                  Revenue Forecast
+                </span>
+
+                <strong>
+                  +18.4%
+                </strong>
+
+              </div>
+
+              <div class="bars">
+
+                <i style="--h: 38%"></i>
+                <i style="--h: 52%"></i>
+                <i style="--h: 47%"></i>
+                <i style="--h: 69%"></i>
+                <i style="--h: 82%"></i>
+                <i style="--h: 91%"></i>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="project-body">
+
+            <span class="project-type">
+              AI BUSINESS APPLICATION
+            </span>
+
+            <h3>
+              Dental Office AI Growth Strategist
+            </h3>
+
+            <p>
+              Built a Python-based decision application
+              combining revenue prediction, what-if analysis,
+              API workflows, interactive UI, and AI-generated
+              business recommendations.
+            </p>
+
+            <div class="tag-row">
+
+              <span>Python</span>
+              <span>SQL</span>
+              <span>FastAPI</span>
+              <span>Streamlit</span>
+              <span>scikit-learn</span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- Climate -->
+        <article
+          class="project-card interactive-card"
+          data-category="analytics ai"
+          data-reveal
+        >
+
+          <div class="project-number">
+            03
+          </div>
+
+          <div class="project-visual risk-visual">
+
+            <div class="risk-score">
+
+              <small>
+                MODEL PERFORMANCE
+              </small>
+
+              <strong
+                class="counter"
+                data-target="919"
+              >
+                0
+              </strong>
+
+              <span>
+                R² = 0.919
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="project-body">
+
+            <span class="project-type">
+              MACHINE LEARNING
+            </span>
+
+            <h3>
+              Climate Risk Copilot
+            </h3>
+
+            <p>
+              Validated 1,080 observations and developed
+              a Random Forest model that converted predictions
+              into four operational risk groups for clearer prioritization.
+            </p>
+
+            <div class="project-metrics">
+
+              <span>
+                <strong>1,080</strong>
+                records
+              </span>
+
+              <span>
+                <strong>4</strong>
+                risk groups
+              </span>
+
+            </div>
+
+            <div class="tag-row">
+
+              <span>Python</span>
+              <span>Random Forest</span>
+              <span>Power BI</span>
+              <span>ML</span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- Logistics -->
+        <article
+          class="project-card interactive-card"
+          data-category="analytics operations"
+          data-reveal
+        >
+
+          <div class="project-number">
+            04
+          </div>
+
+          <div class="project-visual logistics-visual">
+
+            <div class="logistics-ui">
+
+              <div class="metric-box">
+
+                <small>
+                  DATASET
+                </small>
+
+                <strong>
+                  50K+
+                </strong>
+
+                <span>
+                  records
+                </span>
+
+              </div>
+
+              <div class="metric-box">
+
+                <small>
+                  COST EXPOSURE
+                </small>
+
+                <strong>
+                  15–18%
+                </strong>
+
+                <span>
+                  preventable
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="project-body">
+
+            <span class="project-type">
+              LOGISTICS ANALYTICS
+            </span>
+
+            <h3>
+              Fulfillment KPI & Logistics Analytics
+            </h3>
+
+            <p>
+              Analyzed simulated order, shipment,
+              warehouse, carrier, and inventory data
+              to identify unusual routes, performance
+              patterns, SLA issues, and preventable cost exposure.
+            </p>
+
+            <div class="tag-row">
+
+              <span>SQL</span>
+              <span>Python</span>
+              <span>Power BI</span>
+              <span>Logistics</span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section
+      id="capabilities"
+      class="section-pad capabilities"
+    >
+
+      <div class="section-heading center" data-reveal>
+
+        <p class="section-kicker">
+          CAPABILITIES / 04
+        </p>
+
+        <h2>
+          I build across the
+          <span>full decision stack.</span>
         </h2>
 
       </div>
 
-
       <div class="capability-grid">
 
+        <article class="interactive-card" data-reveal>
 
-        <article>
+          <span class="cap-index">
+            01
+          </span>
 
-          <span class="cap-icon">
+          <div class="cap-icon">
             AI
-          </span>
+          </div>
 
           <h3>
-            AI and ML Solutions
+            AI & Machine Learning
           </h3>
 
           <p>
-            AI agents, NLP, model comparison, anomaly detection,
-            prediction, and GenAI workflow prototypes.
+            AI agents, LLM applications, prompt workflows,
+            predictive models, NLP, anomaly detection,
+            model evaluation, and explainable outputs.
           </p>
 
         </article>
 
+        <article class="interactive-card" data-reveal>
 
-        <article>
-
-          <span class="cap-icon">
-            BI
+          <span class="cap-index">
+            02
           </span>
 
+          <div class="cap-icon">
+            DATA
+          </div>
+
           <h3>
-            Business and Data Analysis
+            Analytics & BI
           </h3>
 
           <p>
-            SQL, requirements, KPI reporting, dashboards,
-            stakeholder communication, and financial or product insights.
+            SQL, Python, Power BI, Tableau,
+            KPI development, forecasting, validation,
+            dashboards, and business analysis.
           </p>
 
         </article>
 
+        <article class="interactive-card" data-reveal>
 
-        <article>
+          <span class="cap-index">
+            03
+          </span>
 
-          <span class="cap-icon">
+          <div class="cap-icon">
             OPS
-          </span>
+          </div>
 
           <h3>
-            Operations and Systems Thinking
+            Operations & Systems
           </h3>
 
           <p>
-            Process mapping, cost control, data quality, automation,
-            cloud workflows, and operational reporting.
+            Process analysis, ERP workflows,
+            inventory, scheduling, root-cause analysis,
+            automation, reporting, and operational decision support.
           </p>
 
         </article>
-
 
       </div>
 
     </section>
 
-
     <!-- EDUCATION -->
-
     <section
       id="education"
       class="section-pad education-grid"
     >
 
-      <div>
+      <div data-reveal>
 
         <p class="section-kicker">
-          Education
+          EDUCATION / 05
         </p>
 
         <h2>
-          Academic foundation.
+          Academic
+          <span>foundation.</span>
         </h2>
 
       </div>
 
-
       <div class="education-cards">
 
-
-        <article>
+        <article
+          class="interactive-card"
+          data-reveal
+        >
 
           <span>
-            Aug 2024 - May 2026
+            AUG 2024 — MAY 2026
           </span>
 
           <h3>
@@ -573,16 +1036,38 @@
           </h3>
 
           <p>
-            Graduated with an M.S. in Business Analytics, GPA 3.4
+            M.S. Business Analytics & Artificial Intelligence
           </p>
+
+          <div class="edu-tags">
+
+            <span>
+              Applied ML
+            </span>
+
+            <span>
+              Deep Learning
+            </span>
+
+            <span>
+              NLP
+            </span>
+
+            <span>
+              Cloud Computing
+            </span>
+
+          </div>
 
         </article>
 
-
-        <article>
+        <article
+          class="interactive-card"
+          data-reveal
+        >
 
           <span>
-            Jun 2021 - May 2024
+            JUN 2021 — MAY 2024
           </span>
 
           <h3>
@@ -590,168 +1075,111 @@
           </h3>
 
           <p>
-            B.S. in Data Science, GPA 3.8
+            B.S. Data Science
           </p>
 
-        </article>
-
-
-        <article>
-
-          <span>
-            Certifications
-          </span>
-
-          <h3>
-            IBM Data Science
-          </h3>
-
-          <p>
-            Fundamentals of R, Agile Learning
-          </p>
+          <strong class="edu-grade">
+            GPA 3.8 / 4.0
+          </strong>
 
         </article>
-
 
       </div>
 
     </section>
 
-
     <!-- CONTACT -->
-
     <section
       id="contact"
       class="section-pad contact-section"
     >
 
-      <p class="section-kicker">
-        Contact
+      <div
+        class="contact-orb"
+        aria-hidden="true"
+      ></div>
+
+      <p
+        class="section-kicker"
+        data-reveal
+      >
+        CONTACT / 06
       </p>
 
-      <h2>
-        Let’s build something useful with data.
+      <h2 data-reveal>
+        Have a messy problem?
+        <br>
+        <span>
+          That’s usually where I start.
+        </span>
       </h2>
 
+      <p
+        class="contact-copy"
+        data-reveal
+      >
+        I’m interested in AI, data, analytics,
+        technical consulting, business intelligence,
+        and operational problem-solving roles.
+      </p>
 
-      <div class="contact-layout">
+      <div
+        class="contact-actions"
+        data-reveal
+      >
 
-
-        <div class="contact-card">
-
-          <h3>
-            Reach me directly
-          </h3>
-
-          <p>
-            Recruiters and hiring teams can reach me by email,
-            phone, LinkedIn, or GitHub.
-          </p>
-
-
-          <div class="contact-actions">
-
-            <a
-              href="mailto:shrutivanparia171@gmail.com"
-            >
-              Email
-            </a>
-
-            <a
-              href="tel:+19453389106"
-            >
-              Call
-            </a>
-
-            <a
-              href="https://linkedin.com/in/shruti-17s"
-              target="_blank"
-              rel="noopener"
-            >
-              LinkedIn
-            </a>
-
-            <a
-              href="https://github.com/ShrutiVan17"
-              target="_blank"
-              rel="noopener"
-            >
-              GitHub
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <form
-          class="contact-form"
-          id="contactForm"
+        <a
+          class="contact-big magnetic"
+          href="mailto:shrutivanparia171@gmail.com"
         >
+          <span>
+            Email me
+          </span>
 
+          <i>
+            ↗
+          </i>
+        </a>
 
-          <label>
+        <a
+          class="contact-small magnetic"
+          href="https://github.com/ShrutiVan17"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub ↗
+        </a>
 
-            Your name
+        <a
+          class="contact-small magnetic"
+          href="https://linkedin.com/in/shruti-17s"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn ↗
+        </a>
 
-            <input
-              id="senderName"
-              name="name"
-              type="text"
-              placeholder="Jane Recruiter"
-              required
-            >
+      </div>
 
-          </label>
+      <div class="footer-line">
 
+        <span>
+          SHRUTI VANPARIA © 2026
+        </span>
 
-          <label>
+        <span>
+          AI · DATA · DECISION SYSTEMS
+        </span>
 
-            Your email
-
-            <input
-              id="senderEmail"
-              name="email"
-              type="email"
-              placeholder="jane@company.com"
-              required
-            >
-
-          </label>
-
-
-          <label>
-
-            Message
-
-            <textarea
-              id="senderMessage"
-              name="message"
-              rows="5"
-              placeholder="Hi Shruti, I would like to talk about..."
-              required
-            ></textarea>
-
-          </label>
-
-
-          <button
-            class="primary-action"
-            type="submit"
-          >
-            Open email draft
-          </button>
-
-
-        </form>
-
+        <a href="#top">
+          BACK TO TOP ↑
+        </a>
 
       </div>
 
     </section>
 
   </main>
-
 
   <script src="script.js"></script>
 
