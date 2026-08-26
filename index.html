@@ -1,1204 +1,288 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Shruti Vanparia | AI & Data Portfolio</title>
-
-  <meta
-    name="description"
-    content="Portfolio of Shruti Vanparia — AI, data analytics, machine learning, business intelligence, and decision-system projects."
-  >
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shruti Vanparia — Data Portfolio</title>
+  <meta name="description" content="Shruti Vanparia builds practical data products, dashboards, models, and reporting systems that turn complex information into clear decisions.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  >
-
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Scroll progress -->
-  <div class="scroll-progress" aria-hidden="true">
-    <span id="scrollProgress"></span>
-  </div>
-
-  <!-- Intro animation -->
-  <div class="intro-screen" id="introScreen" aria-hidden="true">
-    <div class="intro-logo">
-      <span>S</span>
-      <span>V</span>
-    </div>
-
-    <div class="intro-line"></div>
-
-    <p>AI · DATA · DECISION SYSTEMS</p>
-  </div>
-
-  <!-- Background glow -->
-  <div class="page-glow glow-one" aria-hidden="true"></div>
-  <div class="page-glow glow-two" aria-hidden="true"></div>
-
-  <!-- Header -->
   <header class="site-header" id="siteHeader">
-
-    <a class="brand magnetic" href="#top" aria-label="Shruti Vanparia home">
-
-      <span class="brand-mark">SV</span>
-
-      <span class="brand-copy">
-        <strong>Shruti Vanparia</strong>
-        <small>AI + Data Analytics</small>
-      </span>
-
+    <a class="wordmark" href="#top" aria-label="Shruti Vanparia home">
+      <span>SV</span>
+      <strong>Shruti Vanparia</strong>
     </a>
 
-    <button
-      class="menu-toggle"
-      id="menuToggle"
-      type="button"
-      aria-label="Open navigation"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
+    <button class="menu-button" id="menuButton" type="button" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span>
     </button>
 
-    <nav class="nav-links" aria-label="Primary navigation">
-
-      <a href="#about">About</a>
+    <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+      <a href="#work">Work</a>
       <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#capabilities">Skills</a>
-      <a href="#education">Education</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
-
     </nav>
 
-    <a
-      class="hire-button magnetic"
-      href="mailto:shrutivanparia171@gmail.com"
-    >
-      <span class="status-dot"></span>
-      Let’s talk
-    </a>
-
+    <a class="resume-link" href="resu.pdf" target="_blank" rel="noopener">Résumé <span>↗</span></a>
   </header>
 
-  <main id="top">
-
-    <!-- HERO -->
-    <section class="hero section-pad">
-
-      <div class="hero-inner">
-
-        <div class="hero-kicker reveal-up">
-          <span class="live-dot"></span>
-          AI · ANALYTICS · BUSINESS SYSTEMS
-        </div>
-
-        <h1 class="hero-title">
-
-          <span class="hero-line">
-            I turn
-            <em>messy problems</em>
-          </span>
-
-          <span class="hero-line">
-            into systems
-          </span>
-
-          <span class="hero-line">
-            people can
-            <strong>use.</strong>
-          </span>
-
-        </h1>
-
-        <p class="hero-copy reveal-up">
-          I combine business context, Python, SQL, machine learning,
-          AI agents, dashboards, APIs, and cloud workflows to build
-          decision systems that turn complex information into clear action.
-        </p>
-
-        <div class="hero-actions reveal-up">
-
-          <a class="primary-action magnetic" href="#projects">
-            Explore my work
-            <span>↘</span>
-          </a>
-
-          <a
-            class="secondary-action magnetic"
-            href="resu.pdf"
-            target="_blank"
-            rel="noopener"
-          >
-            View resume
-            <span>↗</span>
-          </a>
-
-        </div>
-
-        <div class="social-row reveal-up">
-
-          <a
-            href="https://linkedin.com/in/shruti-17s"
-            target="_blank"
-            rel="noopener"
-          >
-            LinkedIn ↗
-          </a>
-
-          <a
-            href="https://github.com/ShrutiVan17"
-            target="_blank"
-            rel="noopener"
-          >
-            GitHub ↗
-          </a>
-
-          <a href="mailto:shrutivanparia171@gmail.com">
-            Email ↗
-          </a>
-
-        </div>
-
-        <div class="hero-proof reveal-up">
-
-          <span>
-            <strong>Python + SQL</strong>
-            Data workflows
-          </span>
-
-          <span>
-            <strong>GenAI</strong>
-            Agent systems
-          </span>
-
-          <span>
-            <strong>ML</strong>
-            Predictive models
-          </span>
-
-          <span>
-            <strong>BI</strong>
-            Decision dashboards
-          </span>
-
-        </div>
-
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="hero-meta reveal">
+        <span>Plano, Texas</span>
+        <span>Open to analyst opportunities</span>
       </div>
 
-      <!-- Hero visual -->
-      <aside
-        class="hero-card interactive-card"
-        id="heroCard"
-        aria-label="AI decision workflow"
-      >
+      <h1 id="heroTitle" class="hero-title">
+        <span class="reveal">Data systems.</span>
+        <span class="hero-title-indent reveal">Clear decisions.</span>
+      </h1>
 
-        <div class="hero-card-glow"></div>
-
-        <div class="showcase-header">
-
-          <div>
-            <span class="card-label">LIVE DECISION SYSTEM</span>
-            <h2>From raw signal to action.</h2>
-          </div>
-
-          <div class="system-status">
-            <span></span>
-            ACTIVE
-          </div>
-
-        </div>
-
-        <div class="decision-flow">
-
-          <article class="flow-node flow-node-one">
-            <span>01</span>
-            <strong>INPUT</strong>
-            <p>Business problem</p>
-          </article>
-
-          <span class="flow-arrow">→</span>
-
-          <article class="flow-node flow-node-two">
-            <span>02</span>
-            <strong>ANALYZE</strong>
-            <p>Data + models</p>
-          </article>
-
-          <span class="flow-arrow">→</span>
-
-          <article class="flow-node flow-node-three">
-            <span>03</span>
-            <strong>DECIDE</strong>
-            <p>Actionable output</p>
-          </article>
-
-        </div>
-
-        <div class="mini-terminal">
-
-          <div class="terminal-head">
-            <span></span>
-            <span></span>
-            <span></span>
-
-            <small>decision_agent.py</small>
-          </div>
-
-          <div class="terminal-body">
-
-            <p>
-              <span>01</span>
-              problem =
-              <strong>"messy operational data"</strong>
-            </p>
-
-            <p>
-              <span>02</span>
-              model.fit(
-              <strong>business_context</strong>
-              )
-            </p>
-
-            <p>
-              <span>03</span>
-              recommendation =
-              <strong>actionable</strong>
-            </p>
-
-            <p class="terminal-success">
-              ✓ decision system ready
-            </p>
-
-          </div>
-
-        </div>
-
-      </aside>
-
-    </section>
-
-    <!-- MOVING SKILLS STRIP -->
-    <section class="logo-strip" aria-label="Skills and tools">
-
-      <div class="marquee-track">
-
-        <span>Python</span>
-        <i>✦</i>
-
-        <span>SQL</span>
-        <i>✦</i>
-
-        <span>Generative AI</span>
-        <i>✦</i>
-
-        <span>Vertex AI</span>
-        <i>✦</i>
-
-        <span>FastAPI</span>
-        <i>✦</i>
-
-        <span>Power BI</span>
-        <i>✦</i>
-
-        <span>Machine Learning</span>
-        <i>✦</i>
-
-        <span>GCP</span>
-        <i>✦</i>
-
-        <span>Tableau</span>
-        <i>✦</i>
-
-        <span>REST APIs</span>
-        <i>✦</i>
-
-        <!-- duplicated for seamless animation -->
-
-        <span>Python</span>
-        <i>✦</i>
-
-        <span>SQL</span>
-        <i>✦</i>
-
-        <span>Generative AI</span>
-        <i>✦</i>
-
-        <span>Vertex AI</span>
-        <i>✦</i>
-
-        <span>FastAPI</span>
-        <i>✦</i>
-
-        <span>Power BI</span>
-        <i>✦</i>
-
-      </div>
-
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section-pad about-grid">
-
-      <div data-reveal>
-
-        <p class="section-kicker">
-          ABOUT / 01
-        </p>
-
-        <h2>
-          Technical enough to build.
-          <br>
-          Business-minded enough to know
-          <span>what matters.</span>
-        </h2>
-
-      </div>
-
-      <div class="about-copy" data-reveal>
-
+      <div class="hero-footer reveal">
         <p>
-          My work sits between analytics, AI, software,
-          and operations. I like problems where the
-          question is unclear at first and the useful
-          answer requires more than simply building
-          another dashboard.
+          I’m Shruti, a business analytics graduate who turns unclear
+          questions into reliable analysis, useful products, and decisions people can act on.
         </p>
-
-        <p>
-          I start by understanding the workflow,
-          identify the real decision that needs to be
-          improved, prepare the data, build the right
-          technical solution, and make the result easy
-          for non-technical people to use.
-        </p>
-
-        <div class="about-metrics">
-
-          <article>
-            <strong>50K+</strong>
-            <span>records analyzed</span>
-          </article>
-
-          <article>
-            <strong>0.919</strong>
-            <span>ML model R²</span>
-          </article>
-
-          <article>
-            <strong>5</strong>
-            <span>ranked AI outputs</span>
-          </article>
-
-        </div>
-
+        <a href="#work">Explore selected work <span>↓</span></a>
       </div>
 
+      <div class="hero-rail" aria-hidden="true">
+        <span>SQL</span><i></i><span>Python</span><i></i><span>Power BI</span><i></i>
+        <span>Machine Learning</span><i></i><span>Business Analysis</span>
+      </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section-pad experience-section">
-
-      <div class="section-heading" data-reveal>
-
-        <p class="section-kicker">
-          EXPERIENCE / 02
-        </p>
-
-        <h2>
-          Work that shaped
-          <span>how I solve problems.</span>
-        </h2>
-
-      </div>
-
-      <div class="timeline">
-
-        <div class="timeline-progress">
-          <span id="timelineProgress"></span>
+    <section class="intro section" id="about" aria-labelledby="aboutTitle">
+      <div class="section-label reveal">01 / Profile</div>
+      <div class="intro-copy reveal">
+        <h2 id="aboutTitle">Technical enough to build.<br>Business-minded enough to know what matters.</h2>
+        <div class="intro-columns">
+          <p>
+            My work sits between data, operations, machine learning, and business strategy.
+            I start with the decision—not the tool—then build the simplest system that makes
+            that decision faster, clearer, or more reliable.
+          </p>
+          <dl class="profile-facts">
+            <div><dt>Focus</dt><dd>Analytics, reporting & operations</dd></div>
+            <div><dt>Education</dt><dd>M.S. Business Analytics</dd></div>
+            <div><dt>Strength</dt><dd>Turning ambiguity into action</dd></div>
+          </dl>
         </div>
-
-        <article class="timeline-card interactive-card" data-reveal>
-
-          <div class="timeline-left">
-
-            <span class="date">
-              JUL 2026 — PRESENT
-            </span>
-
-            <h3>
-              Data Operations Analyst
-            </h3>
-
-            <p>
-              Pinnacle Arc LLC
-            </p>
-
-          </div>
-
-          <div class="timeline-right">
-
-            <p>
-              Working with operational datasets using
-              SQL, Python, Excel, and Power BI to improve
-              data quality, reporting consistency, and
-              business decision-making.
-            </p>
-
-            <ul>
-
-              <li>
-                Validate and reconcile operational data
-                across multiple systems.
-              </li>
-
-              <li>
-                Investigate missing, duplicate, and
-                inconsistent records.
-              </li>
-
-              <li>
-                Build recurring reports and translate
-                reporting issues into corrective actions.
-              </li>
-
-            </ul>
-
-          </div>
-
-        </article>
-
-        <article class="timeline-card interactive-card" data-reveal>
-
-          <div class="timeline-left">
-
-            <span class="date">
-              JAN 2023 — MAY 2024
-            </span>
-
-            <h3>
-              Data & Operations Analyst
-            </h3>
-
-            <p>
-              Shreeji Plast
-            </p>
-
-          </div>
-
-          <div class="timeline-right">
-
-            <p>
-              Worked in a manufacturing environment
-              across production, inventory, materials,
-              ERP data, and scheduling workflows.
-            </p>
-
-            <ul>
-
-              <li>
-                Reconciled ERP and Excel records across
-                materials, inventory, and production.
-              </li>
-
-              <li>
-                Identified shortages, bottlenecks,
-                schedule exceptions, and inconsistent inputs.
-              </li>
-
-              <li>
-                Converted operational information into
-                structured reports and clear follow-up actions.
-              </li>
-
-            </ul>
-
-          </div>
-
-        </article>
-
       </div>
-
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section-pad projects-section">
-
-      <div class="section-heading center" data-reveal>
-
-        <p class="section-kicker">
-          SELECTED WORK / 03
-        </p>
-
-        <h2>
-          Projects built around
-          <span>real decisions.</span>
-        </h2>
-
-        <p>
-          Thirteen selected AI, analytics, operations, and machine learning projects,
-          ordered from strongest end-to-end systems to specialized analysis.
-        </p>
-
+    <section class="work section" id="work" aria-labelledby="workTitle">
+      <div class="section-label reveal">02 / Selected work</div>
+      <div class="work-heading reveal">
+        <div>
+          <h2 id="workTitle">Thirteen projects.<br>One clear point of view.</h2>
+          <p>Strongest end-to-end systems first, followed by focused analytics and modeling work.</p>
+        </div>
+        <div class="project-count"><strong id="visibleCount">13</strong><span>projects shown</span></div>
       </div>
 
-      <div class="filter-row" data-reveal>
-
-        <button
-          class="filter active"
-          type="button"
-          data-filter="all"
-        >
-          All
-        </button>
-
-        <button
-          class="filter"
-          type="button"
-          data-filter="ai"
-        >
-          AI / GenAI
-        </button>
-
-        <button
-          class="filter"
-          type="button"
-          data-filter="analytics"
-        >
-          Analytics
-        </button>
-
-        <button
-          class="filter"
-          type="button"
-          data-filter="operations"
-        >
-          Operations
-        </button>
-
+      <div class="filters reveal" role="group" aria-label="Filter projects">
+        <button class="filter is-active" type="button" data-filter="all">All</button>
+        <button class="filter" type="button" data-filter="ai">Models & automation</button>
+        <button class="filter" type="button" data-filter="analytics">Analytics & BI</button>
+        <button class="filter" type="button" data-filter="operations">Operations</button>
       </div>
 
       <div class="project-grid">
-
-        <!-- 01 ParkSafe AI -->
-        <article class="project-card featured interactive-card" data-category="ai analytics operations" data-reveal>
-          <div class="project-number">01</div>
-          <div class="project-visual">
-            <img src="project-parksafe-ai.webp" alt="ParkSafe AI parking recommendation interface" style="width:100%;height:100%;object-fit:cover;display:block" loading="eager">
+        <article class="project project-lead reveal" data-category="ai analytics operations">
+          <div class="project-media">
+            <img src="project-parksafe-ai.webp" alt="ParkSafe parking recommendation interface" loading="eager">
           </div>
-          <div class="project-body">
-            <span class="project-type">AI DECISION AGENT · 2026</span>
-            <h3>ParkSafe AI</h3>
-            <p>
-              Built a real-time parking decision agent that combines LADOT occupancy and inventory,
-              Google Places and Routes, price, walking time, ratings, and risk signals to rank the
-              five strongest parking choices.
-            </p>
-            <div class="project-metrics">
-              <span><strong>5</strong>ranked options</span>
-              <span><strong>Live</strong>API inputs</span>
-            </div>
-            <div class="tag-row">
-              <span>Python</span><span>Gemini</span><span>Vertex AI</span>
-              <span>Elasticsearch</span><span>REST APIs</span>
-            </div>
+          <div class="project-copy">
+            <div class="project-topline"><span>01</span><span>Parking decision system · 2026</span></div>
+            <h3>ParkSafe Parking System</h3>
+            <p>Combined live parking occupancy, routes, price, walking time, ratings, and risk signals to rank the five strongest parking choices.</p>
+            <div class="outcomes"><span><strong>5</strong> ranked options</span><span><strong>Live</strong> API inputs</span></div>
+            <ul class="tags"><li>Python</li><li>Gemini</li><li>Vertex</li><li>Elasticsearch</li></ul>
+            <a class="case-link" href="https://github.com/ShrutiVan17/parsafe" target="_blank" rel="noopener">View repository <span>↗</span></a>
           </div>
         </article>
 
-        <!-- 02 Dental Office AI Growth Strategist -->
-        <article class="project-card interactive-card" data-category="ai analytics operations" data-reveal>
-          <div class="project-number">02</div>
-          <div class="project-visual">
-            <img src="project-dental-ai-real.webp" alt="Dental Office AI Growth Strategist interface" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
-          </div>
-          <div class="project-body">
-            <span class="project-type">AI BUSINESS APPLICATION · 2025</span>
-            <h3>Dental Office AI Growth Strategist</h3>
-            <p>
-              Created an end-to-end decision application that combines revenue prediction,
-              what-if analysis, an interactive interface, API workflows, and AI-generated
-              recommendations for dental-office growth planning.
-            </p>
-            <div class="tag-row">
-              <span>Python</span><span>FastAPI</span><span>Streamlit</span>
-              <span>scikit-learn</span><span>GenAI</span>
-            </div>
+        <article class="project reveal" data-category="ai analytics operations">
+          <div class="project-media"><img src="project-dental-ai-real.webp" alt="Dental Office Growth Strategist interface" loading="lazy"></div>
+          <div class="project-copy">
+            <div class="project-topline"><span>02</span><span>Business planning application · 2025</span></div>
+            <h3>Dental Office Growth Strategist</h3>
+            <p>Revenue prediction, what-if planning, APIs, an interactive interface, and automated recommendations in one decision product.</p>
+            <ul class="tags"><li>Python</li><li>FastAPI</li><li>Streamlit</li><li>scikit-learn</li></ul>
+            <a class="case-link" href="https://github.com/ShrutiVan17/dental-operations-app" target="_blank" rel="noopener">View repository <span>↗</span></a>
           </div>
         </article>
 
-        <!-- 03 Climate Risk Copilot -->
-        <article class="project-card interactive-card" data-category="ai analytics" data-reveal>
-          <div class="project-number">03</div>
-          <div class="project-visual risk-visual">
-            <div class="risk-score">
-              <small>MODEL PERFORMANCE</small>
-              <strong class="counter" data-target="919">0</strong>
-              <span>R² = 0.919</span>
-            </div>
-          </div>
-          <div class="project-body">
-            <span class="project-type">PREDICTIVE ANALYTICS · 2026</span>
+        <article class="project metric-project reveal" data-category="ai analytics">
+          <div class="metric-media"><span>R²</span><strong>0.919</strong><small>Random Forest performance</small></div>
+          <div class="project-copy">
+            <div class="project-topline"><span>03</span><span>Predictive analytics · 2026</span></div>
             <h3>Climate Risk Copilot</h3>
-            <p>
-              Validated 1,080 observations and built a Random Forest model that translated
-              predictions into Low, Emerging, High, and Critical risk groups for clearer
-              operational prioritization.
-            </p>
-            <div class="project-metrics">
-              <span><strong>0.919</strong>R² score</span>
-              <span><strong>4.81</strong>MAE</span>
-            </div>
-            <div class="tag-row">
-              <span>Python</span><span>Random Forest</span><span>Power BI</span>
-              <span>Risk Segmentation</span>
-            </div>
+            <p>Validated 1,080 observations and translated model output into four operational risk groups for clearer prioritization.</p>
+            <ul class="tags"><li>Python</li><li>Random Forest</li><li>Power BI</li><li>Risk segmentation</li></ul>
           </div>
         </article>
 
-        <!-- 04 Hotel Booking Performance -->
-        <article class="project-card interactive-card" data-category="analytics ai operations" data-reveal>
-          <div class="project-number">04</div>
-          <div class="project-visual dashboard-visual">
-            <div class="mini-dashboard">
-              <div class="dashboard-top">
-                <span>Cancellation Model</span>
-                <strong>0.956 AUC</strong>
-              </div>
-              <div class="bars">
-                <i style="--h:42%"></i><i style="--h:58%"></i><i style="--h:51%"></i>
-                <i style="--h:73%"></i><i style="--h:84%"></i><i style="--h:96%"></i>
-              </div>
-            </div>
-          </div>
-          <div class="project-body">
-            <span class="project-type">ML + BUSINESS INTELLIGENCE · 2026</span>
+        <article class="project metric-project metric-project-dark reveal" data-category="ai analytics operations">
+          <div class="metric-media"><span>AUC</span><strong>0.956</strong><small>Cancellation model</small></div>
+          <div class="project-copy">
+            <div class="project-topline"><span>04</span><span>ML + business intelligence · 2026</span></div>
             <h3>Hotel Booking Cancellation Analytics</h3>
-            <p>
-              Analyzed occupancy, demand, and cancellation behavior, then built a Random Forest
-              model and business dashboard to identify high-risk bookings and support capacity
-              and revenue decisions.
-            </p>
-            <div class="project-metrics">
-              <span><strong>0.843</strong>F1 score</span>
-              <span><strong>0.956</strong>AUC</span>
-            </div>
-            <div class="tag-row">
-              <span>Python</span><span>Random Forest</span><span>Power BI</span>
-              <span>Excel</span>
-            </div>
+            <p>Connected cancellation modeling with a dashboard for demand, occupancy, capacity, and revenue decisions.</p>
+            <ul class="tags"><li>Python</li><li>Random Forest</li><li>Power BI</li><li>Excel</li></ul>
           </div>
         </article>
 
-        <!-- 05 Telecom Data Quality and Churn -->
-        <article class="project-card interactive-card" data-category="analytics operations" data-reveal>
-          <div class="project-number">05</div>
-          <div class="project-visual logistics-visual">
-            <div class="logistics-ui">
-              <div class="metric-box">
-                <small>RECORDS CHECKED</small>
-                <strong>7,043</strong>
-                <span>customer rows</span>
-              </div>
-              <div class="metric-box">
-                <small>CHURN RATE</small>
-                <strong>26.5%</strong>
-                <span>1,869 customers</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-body">
-            <span class="project-type">DATA QUALITY + BI</span>
+        <article class="project metric-project reveal" data-category="analytics operations">
+          <div class="metric-media"><span>Records</span><strong>7,043</strong><small>14 quality checks · 26.5% churn</small></div>
+          <div class="project-copy">
+            <div class="project-topline"><span>05</span><span>Data quality + BI</span></div>
             <h3>Telecom Churn Monitoring Dashboard</h3>
-            <p>
-              Built a repeatable SQL and Python validation workflow across 21 fields, applied
-              14 quality checks, isolated billing exceptions, and created a Power BI view of
-              churn patterns and monitoring priorities.
-            </p>
-            <div class="project-metrics">
-              <span><strong>14</strong>validation checks</span>
-              <span><strong>0</strong>duplicate IDs</span>
-            </div>
-            <div class="tag-row">
-              <span>SQL</span><span>Python</span><span>Power BI</span>
-              <span>Data Quality</span>
-            </div>
+            <p>Built repeatable validation across 21 fields, isolated billing exceptions, and surfaced churn patterns in Power BI.</p>
+            <ul class="tags"><li>SQL</li><li>Python</li><li>Power BI</li><li>Data quality</li></ul>
           </div>
         </article>
 
-        <!-- 06 HMDA Mortgage Analytics -->
-        <article class="project-card interactive-card" data-category="analytics" data-reveal>
-          <div class="project-number">06</div>
-          <div class="project-visual logistics-visual">
-            <div class="logistics-ui">
-              <div class="metric-box">
-                <small>TIME WINDOW</small>
-                <strong>10 yrs</strong>
-                <span>2007–2017</span>
-              </div>
-              <div class="metric-box">
-                <small>MARKETS</small>
-                <strong>4</strong>
-                <span>U.S. states</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-body">
-            <span class="project-type">HOUSING + LENDING ANALYTICS</span>
+        <article class="project metric-project metric-project-red reveal" data-category="analytics">
+          <div class="metric-media"><span>Window</span><strong>10 yrs</strong><small>Four U.S. markets · 2007–2017</small></div>
+          <div class="project-copy">
+            <div class="project-topline"><span>06</span><span>Housing + lending analytics</span></div>
             <h3>HMDA Mortgage Lending Analytics</h3>
-            <p>
-              Examined mortgage applications and housing-market patterns across Texas, Ohio,
-              New York, and California to compare lending activity, approval outcomes, and
-              long-term changes from 2007 through 2017.
-            </p>
-            <div class="tag-row">
-              <span>Python</span><span>SQL</span><span>Tableau</span>
-              <span>Power BI</span><span>HMDA</span>
-            </div>
+            <p>Compared mortgage applications, approval outcomes, and long-term lending patterns across Texas, Ohio, New York, and California.</p>
+            <ul class="tags"><li>Python</li><li>SQL</li><li>Tableau</li><li>Power BI</li></ul>
           </div>
         </article>
 
-        <!-- 07 Utility Bill Anomaly Detection -->
-        <article class="project-card interactive-card" data-category="analytics operations ai" data-reveal>
-          <div class="project-number">07</div>
-          <div class="project-visual">
-            <img src="project-utility-anomaly.webp" alt="Utility bill anomaly detection dashboard" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
-          </div>
-          <div class="project-body">
-            <span class="project-type">ANOMALY DETECTION · 2025</span>
+        <article class="project reveal" data-category="ai analytics operations">
+          <div class="project-media"><img src="project-utility-anomaly.webp" alt="Utility bill anomaly monitoring dashboard" loading="lazy"></div>
+          <div class="project-copy">
+            <div class="project-topline"><span>07</span><span>Anomaly detection · 2025</span></div>
             <h3>Utility Bill Anomaly Detection</h3>
-            <p>
-              Automated utility-bill monitoring with rolling baselines, statistical thresholds,
-              occupancy-normalized costs, and step-change rules to flag abnormal consumption
-              for operational review.
-            </p>
-            <div class="project-metrics">
-              <span><strong>3σ</strong>Z-score rule</span>
-              <span><strong>30%+</strong>step-change flag</span>
-            </div>
-            <div class="tag-row">
-              <span>Python</span><span>Anomaly Detection</span><span>Automation</span>
-              <span>CSV Pipeline</span>
-            </div>
+            <p>Automated rolling baselines, occupancy-normalized costs, 3σ thresholds, and 30% step-change flags for operational review.</p>
+            <ul class="tags"><li>Python</li><li>Anomaly detection</li><li>Automation</li><li>CSV pipeline</li></ul>
           </div>
         </article>
 
-        <!-- 08 Credit Card Fraud Detection -->
-        <article class="project-card interactive-card" data-category="analytics ai" data-reveal>
-          <div class="project-number">08</div>
-          <div class="project-visual">
-            <img src="project-credit-fraud-dashboard.webp" alt="Credit card fraud analytics dashboard" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
-          </div>
-          <div class="project-body">
-            <span class="project-type">FRAUD ANALYTICS</span>
+        <article class="project reveal" data-category="ai analytics">
+          <div class="project-media"><img src="project-credit-fraud-dashboard.webp" alt="Credit card fraud analytics dashboard" loading="lazy"></div>
+          <div class="project-copy">
+            <div class="project-topline"><span>08</span><span>Fraud analytics</span></div>
             <h3>Credit Card Fraud Detection Pipeline</h3>
-            <p>
-              Developed a SQL preprocessing and transaction-validation pipeline, tested
-              supervised and anomaly-detection methods for imbalanced fraud data, and translated
-              model outputs into a Power BI risk dashboard.
-            </p>
-            <div class="tag-row">
-              <span>SQL</span><span>Python</span><span>SMOTE</span>
-              <span>Isolation Forest</span><span>Power BI</span>
-            </div>
+            <p>Created SQL preprocessing, transaction validation, imbalanced-data modeling, and a Power BI risk dashboard.</p>
+            <ul class="tags"><li>SQL</li><li>Python</li><li>SMOTE</li><li>Isolation Forest</li></ul>
           </div>
         </article>
 
-        <!-- 09 Vertex AI Salon Chatbot -->
-        <article class="project-card interactive-card" data-category="ai operations" data-reveal>
-          <div class="project-number">09</div>
-          <div class="project-visual">
-            <img src="project-salon-chatbot-real.webp" alt="Vertex AI salon service chatbot" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
-          </div>
-          <div class="project-body">
-            <span class="project-type">CONVERSATIONAL AI</span>
-            <h3>Vertex AI Salon Service Chatbot</h3>
-            <p>
-              Built a customer-service chatbot for service, pricing, availability, and booking
-              questions, then refined prompt behavior using interaction patterns and clear
-              escalation paths.
-            </p>
-            <div class="tag-row">
-              <span>Vertex AI</span><span>Gemini</span><span>Prompt Design</span>
-              <span>Customer Analytics</span>
-            </div>
+        <article class="project reveal" data-category="ai operations">
+          <div class="project-media"><img src="project-salon-chatbot-real.webp" alt="Salon service assistant interface" loading="lazy"></div>
+          <div class="project-copy">
+            <div class="project-topline"><span>09</span><span>Customer service automation</span></div>
+            <h3>Salon Service Assistant</h3>
+            <p>Handled service, pricing, availability, and booking questions with refined prompts and clear escalation paths.</p>
+            <ul class="tags"><li>Vertex</li><li>Gemini</li><li>Prompt design</li><li>Customer analytics</li></ul>
           </div>
         </article>
 
-
-        <!-- 10 AWS Lambda University Course Assistant -->
-        <article class="project-card interactive-card" data-category="ai operations" data-reveal>
-          <div class="project-number">10</div>
-          <div class="project-visual">
-            <img src="project-course-assistant-real.webp" alt="AWS Lambda University Course Assistant interface" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
-          </div>
-          <div class="project-body">
-            <span class="project-type">SERVERLESS AI · 2025</span>
+        <article class="project reveal" data-category="ai operations">
+          <div class="project-media"><img src="project-course-assistant-real.webp" alt="AWS Lambda University Course Assistant interface" loading="lazy"></div>
+          <div class="project-copy">
+            <div class="project-topline"><span>10</span><span>Serverless application · 2025</span></div>
             <h3>AWS Lambda University Course Assistant</h3>
-            <p>
-              Built a serverless chatbot during a hackathon to answer course questions,
-              guide students to academic information, and handle requests through an
-              AWS Lambda workflow. The project team placed fourth.
-            </p>
-            <div class="project-metrics">
-              <span><strong>4th</strong>hackathon team</span>
-              <span><strong>Cloud</strong>serverless flow</span>
-            </div>
-            <div class="tag-row">
-              <span>AWS Lambda</span><span>Python</span><span>Serverless</span>
-              <span>Chatbot</span>
-            </div>
+            <p>Built a serverless course-information chatbot during a hackathon; the project team placed fourth.</p>
+            <ul class="tags"><li>AWS Lambda</li><li>Python</li><li>Serverless</li><li>Chatbot</li></ul>
           </div>
         </article>
 
-        <!-- 11 IBM HR Attrition Analytics Database -->
-        <article class="project-card interactive-card" data-category="analytics operations" data-reveal>
-          <div class="project-number">11</div>
-          <div class="project-visual">
-            <img src="project-hr-attrition.webp" alt="IBM HR attrition analytics database and dashboard" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
-          </div>
-          <div class="project-body">
-            <span class="project-type">SQL + DATA MODELING</span>
+        <article class="project reveal" data-category="analytics operations">
+          <div class="project-media"><img src="project-hr-attrition.webp" alt="HR attrition database model and analytics dashboard" loading="lazy"></div>
+          <div class="project-copy">
+            <div class="project-topline"><span>11</span><span>SQL + data modeling</span></div>
             <h3>IBM HR Attrition Analytics Database</h3>
-            <p>
-              Designed a normalized employee-analytics database with ERD and EER modeling,
-              lookup tables, foreign keys, and SQL queries to support consistent analysis
-              of attrition, roles, compensation, satisfaction, and tenure.
-            </p>
-            <div class="tag-row">
-              <span>MySQL</span><span>3NF</span><span>ERD / EER</span>
-              <span>Data Modeling</span><span>HR Analytics</span>
-            </div>
+            <p>Designed a normalized employee database with ERD/EER modeling, lookup tables, foreign keys, and reusable SQL queries.</p>
+            <ul class="tags"><li>MySQL</li><li>3NF</li><li>ERD / EER</li><li>HR analytics</li></ul>
           </div>
         </article>
 
-        <!-- 12 Diabetes Prediction Model Comparison -->
-        <article class="project-card interactive-card" data-category="analytics ai" data-reveal>
-          <div class="project-number">12</div>
-          <div class="project-visual">
-            <img src="project-diabetes-prediction.webp" alt="Diabetes prediction analytics illustration" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
-          </div>
-          <div class="project-body">
-            <span class="project-type">HEALTHCARE MACHINE LEARNING</span>
+        <article class="project reveal" data-category="ai analytics">
+          <div class="project-media"><img src="project-diabetes-prediction.webp" alt="Diabetes prediction analytics visual" loading="lazy"></div>
+          <div class="project-copy">
+            <div class="project-topline"><span>12</span><span>Healthcare machine learning</span></div>
             <h3>Diabetes Prediction Model Comparison</h3>
-            <p>
-              Compared classical and deep-learning approaches for diabetes-risk prediction,
-              using consistent preprocessing and evaluation to examine how model choice
-              affected accuracy, AUC, and practical interpretability.
-            </p>
-            <div class="tag-row">
-              <span>XGBoost</span><span>KNN</span><span>TensorFlow</span>
-              <span>PyTorch</span><span>AUC</span>
-            </div>
+            <p>Compared classical and deep-learning approaches using consistent preprocessing, accuracy, AUC, and interpretability.</p>
+            <ul class="tags"><li>XGBoost</li><li>KNN</li><li>TensorFlow</li><li>PyTorch</li></ul>
           </div>
         </article>
 
-        <!-- 13 Cervical Cancer Prediction -->
-        <article class="project-card interactive-card" data-category="analytics ai" data-reveal>
-          <div class="project-number">13</div>
-          <div class="project-visual">
-            <img src="project-cervical-cancer.webp" alt="Cervical health screening and prediction interface" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
-          </div>
-          <div class="project-body">
-            <span class="project-type">HEALTHCARE RISK ANALYTICS</span>
+        <article class="project reveal" data-category="ai analytics">
+          <div class="project-media"><img src="project-cervical-cancer.webp" alt="Cervical health screening and risk interface" loading="lazy"></div>
+          <div class="project-copy">
+            <div class="project-topline"><span>13</span><span>Healthcare risk analytics</span></div>
             <h3>Cervical Cancer Risk Prediction</h3>
-            <p>
-              Explored lifestyle, behavioral, and medical factors in a healthcare-risk
-              dataset to build a prediction workflow supporting prevention analysis,
-              screening awareness, and responsible interpretation of model results.
-            </p>
-            <div class="tag-row">
-              <span>Python</span><span>Classification</span><span>Healthcare Data</span>
-              <span>Risk Analytics</span>
-            </div>
+            <p>Explored lifestyle, behavioral, and medical factors for prevention analysis and responsible risk-model interpretation.</p>
+            <ul class="tags"><li>Python</li><li>Classification</li><li>Healthcare data</li><li>Risk analytics</li></ul>
           </div>
         </article>
-
       </div>
-
     </section>
 
-    <!-- CAPABILITIES -->
-    <section
-      id="capabilities"
-      class="section-pad capabilities"
-    >
-
-      <div class="section-heading center" data-reveal>
-
-        <p class="section-kicker">
-          CAPABILITIES / 04
-        </p>
-
-        <h2>
-          I build across the
-          <span>full decision stack.</span>
-        </h2>
-
+    <section class="experience section" id="experience" aria-labelledby="experienceTitle">
+      <div class="section-label reveal">03 / Experience</div>
+      <div class="experience-heading reveal">
+        <h2 id="experienceTitle">Where analysis met operations.</h2>
       </div>
-
-      <div class="capability-grid">
-
-        <article class="interactive-card" data-reveal>
-
-          <span class="cap-index">
-            01
-          </span>
-
-          <div class="cap-icon">
-            AI
-          </div>
-
-          <h3>
-            AI & Machine Learning
-          </h3>
-
-          <p>
-            AI agents, LLM applications, prompt workflows,
-            predictive models, NLP, anomaly detection,
-            model evaluation, and explainable outputs.
-          </p>
-
-        </article>
-
-        <article class="interactive-card" data-reveal>
-
-          <span class="cap-index">
-            02
-          </span>
-
-          <div class="cap-icon">
-            DATA
-          </div>
-
-          <h3>
-            Analytics & BI
-          </h3>
-
-          <p>
-            SQL, Python, Power BI, Tableau,
-            KPI development, forecasting, validation,
-            dashboards, and business analysis.
-          </p>
-
-        </article>
-
-        <article class="interactive-card" data-reveal>
-
-          <span class="cap-index">
-            03
-          </span>
-
-          <div class="cap-icon">
-            OPS
-          </div>
-
-          <h3>
-            Operations & Systems
-          </h3>
-
-          <p>
-            Process analysis, ERP workflows,
-            inventory, scheduling, root-cause analysis,
-            automation, reporting, and operational decision support.
-          </p>
-
-        </article>
-
-      </div>
-
+      <article class="experience-row reveal">
+        <div><span>Jan 2023 — May 2024</span><h3>Data & Operations Analyst</h3><p>Shreeji Plast</p></div>
+        <div>
+          <p>Worked across production, inventory, materials, ERP records, and scheduling in a manufacturing environment.</p>
+          <ul>
+            <li>Reconciled ERP and Excel records before issues reached recurring reports.</li>
+            <li>Identified shortages, bottlenecks, schedule exceptions, and inconsistent inputs.</li>
+            <li>Turned operational data into structured reports and clear follow-up actions.</li>
+          </ul>
+        </div>
+      </article>
     </section>
 
-    <!-- EDUCATION -->
-    <section
-      id="education"
-      class="section-pad education-grid"
-    >
-
-      <div data-reveal>
-
-        <p class="section-kicker">
-          EDUCATION / 05
-        </p>
-
-        <h2>
-          Academic
-          <span>foundation.</span>
-        </h2>
-
+    <section class="capabilities section" aria-labelledby="capabilitiesTitle">
+      <div class="section-label reveal">04 / Capabilities</div>
+      <h2 id="capabilitiesTitle" class="reveal">What I bring to the table.</h2>
+      <div class="capability-list">
+        <article class="reveal"><span>01</span><h3>Analytics & BI</h3><p>SQL, Python, Power BI, Tableau, Excel, KPI design, forecasting, validation, and decision-ready dashboards.</p></article>
+        <article class="reveal"><span>02</span><h3>Modeling & Automation</h3><p>Predictive modeling, text analysis, anomaly detection, model evaluation, APIs, automation, and explainable outputs.</p></article>
+        <article class="reveal"><span>03</span><h3>Operations & Systems</h3><p>Process analysis, ERP workflows, inventory, scheduling, automation, root-cause analysis, and reporting systems.</p></article>
       </div>
-
-      <div class="education-cards">
-
-        <article
-          class="interactive-card"
-          data-reveal
-        >
-
-          <span>
-            AUG 2024 — MAY 2026
-          </span>
-
-          <h3>
-            University of Texas at Dallas
-          </h3>
-
-          <p>
-            M.S. Business Analytics & Artificial Intelligence
-          </p>
-
-          <div class="edu-tags">
-
-            <span>
-              Applied ML
-            </span>
-
-            <span>
-              Deep Learning
-            </span>
-
-            <span>
-              NLP
-            </span>
-
-            <span>
-              Cloud Computing
-            </span>
-
-          </div>
-
-        </article>
-
-        <article
-          class="interactive-card"
-          data-reveal
-        >
-
-          <span>
-            JUN 2021 — MAY 2024
-          </span>
-
-          <h3>
-            Indus University
-          </h3>
-
-          <p>
-            B.S. Data Science
-          </p>
-
-          <strong class="edu-grade">
-            GPA 3.8 / 4.0
-          </strong>
-
-        </article>
-
-      </div>
-
     </section>
 
-    <!-- CONTACT -->
-    <section
-      id="contact"
-      class="section-pad contact-section"
-    >
-
-      <div
-        class="contact-orb"
-        aria-hidden="true"
-      ></div>
-
-      <p
-        class="section-kicker"
-        data-reveal
-      >
-        CONTACT / 06
-      </p>
-
-      <h2 data-reveal>
-        Have a messy problem?
-        <br>
-        <span>
-          That’s usually where I start.
-        </span>
-      </h2>
-
-      <p
-        class="contact-copy"
-        data-reveal
-      >
-        I’m interested in AI, data, analytics,
-        technical consulting, business intelligence,
-        and operational problem-solving roles.
-      </p>
-
-      <div
-        class="contact-actions"
-        data-reveal
-      >
-
-        <a
-          class="contact-big magnetic"
-          href="mailto:shrutivanparia171@gmail.com"
-        >
-          <span>
-            Email me
-          </span>
-
-          <i>
-            ↗
-          </i>
-        </a>
-
-        <a
-          class="contact-small magnetic"
-          href="https://github.com/ShrutiVan17"
-          target="_blank"
-          rel="noopener"
-        >
-          GitHub ↗
-        </a>
-
-        <a
-          class="contact-small magnetic"
-          href="https://linkedin.com/in/shruti-17s"
-          target="_blank"
-          rel="noopener"
-        >
-          LinkedIn ↗
-        </a>
-
+    <section class="education section" aria-labelledby="educationTitle">
+      <div class="section-label reveal">05 / Education</div>
+      <h2 id="educationTitle" class="reveal">Education</h2>
+      <div class="education-grid">
+        <article class="reveal"><span>2024 — 2026</span><h3>University of Texas at Dallas</h3><p>M.S. Business Analytics</p></article>
+        <article class="reveal"><span>2021 — 2024</span><h3>Indus University</h3><p>B.S. Data Science · GPA 3.8 / 4.0</p></article>
       </div>
-
-      <div class="footer-line">
-
-        <span>
-          SHRUTI VANPARIA © 2026
-        </span>
-
-        <span>
-          AI · DATA · DECISION SYSTEMS
-        </span>
-
-        <a href="#top">
-          BACK TO TOP ↑
-        </a>
-
-      </div>
-
     </section>
 
+    <section class="contact section" id="contact" aria-labelledby="contactTitle">
+      <div class="section-label reveal">06 / Contact</div>
+      <div class="contact-main reveal">
+        <h2 id="contactTitle">Have a difficult question?<br>Let’s make it clear.</h2>
+        <a href="mailto:shrutivanparia171@gmail.com">shrutivanparia171@gmail.com <span>↗</span></a>
+      </div>
+      <footer class="footer reveal">
+        <span>© <span id="year">2026</span> Shruti Vanparia</span>
+        <div><a href="https://www.linkedin.com/in/shruti-17s/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/ShrutiVan17" target="_blank" rel="noopener">GitHub</a><a href="#top">Back to top ↑</a></div>
+      </footer>
+    </section>
   </main>
 
   <script src="script.js"></script>
-
 </body>
 </html>
