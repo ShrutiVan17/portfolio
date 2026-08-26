@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title">
+  <title id="title">Movie review sentiment classification</title>
+  <rect width="1200" height="750" fill="#eef0f5"/>
+  <rect x="72" y="68" width="1056" height="614" rx="28" fill="#faf9f6" stroke="#9ba6ba" stroke-width="3"/>
+  <text x="118" y="130" font-family="Arial,sans-serif" font-size="25" fill="#56637a">REVIEW CLASSIFICATION</text>
+  <text x="118" y="205" font-family="Arial,sans-serif" font-size="54" font-weight="700" fill="#303842">Movie sentiment</text>
+  <rect x="118" y="270" width="430" height="210" rx="22" fill="#d7e2dc"/>
+  <text x="158" y="325" font-family="Arial,sans-serif" font-size="24" fill="#52665c">POSITIVE</text>
+  <text x="158" y="405" font-family="Arial,sans-serif" font-size="72" font-weight="700" fill="#52665c">78%</text>
+  <rect x="580" y="270" width="430" height="210" rx="22" fill="#e8d8dc"/>
+  <text x="620" y="325" font-family="Arial,sans-serif" font-size="24" fill="#735c64">NEGATIVE</text>
+  <text x="620" y="405" font-family="Arial,sans-serif" font-size="72" font-weight="700" fill="#735c64">22%</text>
+  <path d="M118 570H1010" stroke="#c5c2bb" stroke-width="3"/>
+  <circle cx="160" cy="610" r="11" fill="#8293b4"/><text x="186" y="619" font-family="Arial,sans-serif" font-size="22" fill="#56606b">Tokenize</text>
+  <circle cx="380" cy="610" r="11" fill="#8293b4"/><text x="406" y="619" font-family="Arial,sans-serif" font-size="22" fill="#56606b">Clean</text>
+  <circle cx="574" cy="610" r="11" fill="#8293b4"/><text x="600" y="619" font-family="Arial,sans-serif" font-size="22" fill="#56606b">Train</text>
+  <circle cx="766" cy="610" r="11" fill="#8293b4"/><text x="792" y="619" font-family="Arial,sans-serif" font-size="22" fill="#56606b">Evaluate</text>
+</svg>

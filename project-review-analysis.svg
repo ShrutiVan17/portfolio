@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title">
+  <title id="title">Product review ratings and theme analysis</title>
+  <rect width="1200" height="750" fill="#f3eeea"/>
+  <text x="78" y="105" font-family="Arial,sans-serif" font-size="24" fill="#74695f">CUSTOMER FEEDBACK</text>
+  <text x="78" y="178" font-family="Arial,sans-serif" font-size="54" font-weight="700" fill="#34373a">Reviews into themes</text>
+  <rect x="78" y="232" width="1044" height="430" rx="28" fill="#fbfaf7" stroke="#c7b9ad" stroke-width="3"/>
+  <text x="126" y="312" font-family="Arial,sans-serif" font-size="70" fill="#8d7e71">4.3</text>
+  <g fill="#a59482"><circle cx="140" cy="357" r="12"/><circle cx="176" cy="357" r="12"/><circle cx="212" cy="357" r="12"/><circle cx="248" cy="357" r="12"/><circle cx="284" cy="357" r="12"/></g>
+  <g font-family="Arial,sans-serif" font-size="22" fill="#555b5e">
+    <text x="438" y="310">Quality</text><rect x="580" y="286" width="410" height="30" rx="15" fill="#d2ddd6"/><rect x="580" y="286" width="342" height="30" rx="15" fill="#8fa99a"/>
+    <text x="438" y="385">Value</text><rect x="580" y="361" width="410" height="30" rx="15" fill="#dce2ea"/><rect x="580" y="361" width="292" height="30" rx="15" fill="#8a9bb8"/>
+    <text x="438" y="460">Delivery</text><rect x="580" y="436" width="410" height="30" rx="15" fill="#e5dce6"/><rect x="580" y="436" width="250" height="30" rx="15" fill="#aa97ad"/>
+  </g>
+  <rect x="126" y="520" width="864" height="92" rx="18" fill="#eee9e1"/>
+  <text x="158" y="575" font-family="Arial,sans-serif" font-size="24" fill="#625d57">Ratings · recurring themes · customer pain points</text>
+</svg>

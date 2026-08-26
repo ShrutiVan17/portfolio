@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title">
+  <title id="title">Time-series dashboard</title>
+  <rect width="1200" height="750" fill="#edf3f0"/>
+  <rect x="64" y="62" width="1072" height="626" rx="28" fill="#fafbf9" stroke="#a8bcb1" stroke-width="3"/>
+  <text x="112" y="132" font-family="Arial,sans-serif" font-size="25" fill="#64786e">TREND MONITOR</text>
+  <text x="112" y="204" font-family="Arial,sans-serif" font-size="54" font-weight="700" fill="#303b36">Time-series dashboard</text>
+  <g stroke="#d6ded9" stroke-width="2"><path d="M112 300H1060M112 390H1060M112 480H1060M112 570H1060"/><path d="M112 270V590M348 270V590M584 270V590M820 270V590M1060 270V590"/></g>
+  <path d="M112 510 C190 490 226 420 302 448 S440 535 520 445 S650 335 730 390 S850 490 930 338 S1012 292 1060 318" fill="none" stroke="#788da5" stroke-width="12" stroke-linecap="round"/>
+  <path d="M112 545 C220 518 310 520 405 490 S590 450 690 430 S875 385 1060 350" fill="none" stroke="#a7bcae" stroke-width="6" stroke-dasharray="16 14"/>
+  <g fill="#788da5"><circle cx="302" cy="448" r="11"/><circle cx="520" cy="445" r="11"/><circle cx="730" cy="390" r="11"/><circle cx="930" cy="338" r="11"/></g>
+</svg>

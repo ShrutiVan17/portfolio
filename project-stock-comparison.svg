@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title">
+  <title id="title">Three-company stock comparison</title>
+  <rect width="1200" height="750" fill="#eef1f4"/>
+  <rect x="64" y="62" width="1072" height="626" rx="28" fill="#fbfaf8" stroke="#aeb8c4" stroke-width="3"/>
+  <text x="112" y="130" font-family="Arial,sans-serif" font-size="24" fill="#637083">MARKET COMPARISON</text>
+  <text x="112" y="200" font-family="Arial,sans-serif" font-size="54" font-weight="700" fill="#343a42">Three companies over time</text>
+  <g stroke="#d9dde2" stroke-width="2"><path d="M112 305H1060M112 405H1060M112 505H1060M112 605H1060"/></g>
+  <path d="M112 545 C230 510 310 450 420 475 S600 380 700 410 S870 315 1060 290" fill="none" stroke="#7b8ead" stroke-width="9"/>
+  <path d="M112 500 C240 535 330 470 440 510 S650 455 760 490 S915 430 1060 455" fill="none" stroke="#9eaf9f" stroke-width="9"/>
+  <path d="M112 570 C250 560 360 535 475 550 S690 500 790 520 S930 485 1060 510" fill="none" stroke="#b39ca8" stroke-width="9"/>
+  <g font-family="Arial,sans-serif" font-size="19" fill="#59616b"><circle cx="750" cy="238" r="8" fill="#7b8ead"/><text x="770" y="245">Company A</text><circle cx="885" cy="238" r="8" fill="#9eaf9f"/><text x="905" y="245">Company B</text><circle cx="1020" cy="238" r="8" fill="#b39ca8"/><text x="1040" y="245">C</text></g>
+</svg>

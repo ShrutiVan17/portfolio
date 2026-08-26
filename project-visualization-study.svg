@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title">
+  <title id="title">Before and after data visualization comparison</title>
+  <rect width="1200" height="750" fill="#f1efed"/>
+  <text x="76" y="108" font-family="Arial,sans-serif" font-size="24" fill="#726c68">VISUALIZATION STUDY</text>
+  <text x="76" y="180" font-family="Arial,sans-serif" font-size="54" font-weight="700" fill="#383634">From cluttered to clear</text>
+  <rect x="76" y="240" width="500" height="430" rx="26" fill="#e6dedb" stroke="#b8aaa5" stroke-width="3"/>
+  <text x="116" y="295" font-family="Arial,sans-serif" font-size="22" fill="#725f5a">BEFORE</text>
+  <g stroke-width="9" fill="none"><path d="M120 560L190 370L260 530L330 330L410 520L520 350" stroke="#ad7f7c"/><path d="M120 440L210 520L280 350L360 480L430 310L520 500" stroke="#8799ad"/><path d="M120 500L200 410L290 470L370 390L450 450L520 380" stroke="#8ea58f"/></g>
+  <rect x="624" y="240" width="500" height="430" rx="26" fill="#f8f8f5" stroke="#9daba3" stroke-width="3"/>
+  <text x="664" y="295" font-family="Arial,sans-serif" font-size="22" fill="#52665b">AFTER</text>
+  <g fill="#9caf9f"><rect x="680" y="470" width="62" height="145"/><rect x="780" y="390" width="62" height="225"/><rect x="880" y="330" width="62" height="285"/><rect x="980" y="270" width="62" height="345"/></g>
+  <path d="M680 420H1042" stroke="#d2d8d4" stroke-width="2"/><path d="M680 520H1042" stroke="#d2d8d4" stroke-width="2"/>
+  <text x="874" y="645" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#637068">one message · clear labels · useful comparison</text>
+</svg>

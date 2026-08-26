@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title">
+  <title id="title">Energy demand and cost forecast</title>
+  <rect width="1200" height="750" fill="#edf2ef"/>
+  <rect x="64" y="62" width="1072" height="626" rx="28" fill="#fafbf9" stroke="#a6b7ad" stroke-width="3"/>
+  <text x="112" y="130" font-family="Arial,sans-serif" font-size="24" fill="#62756a">ENERGY OPERATIONS</text>
+  <text x="112" y="200" font-family="Arial,sans-serif" font-size="54" font-weight="700" fill="#313b35">Demand &amp; cost forecast</text>
+  <g stroke="#d8dfdb" stroke-width="2"><path d="M112 305H1070M112 405H1070M112 505H1070M112 605H1070"/></g>
+  <g fill="#b4c6bb"><rect x="132" y="476" width="55" height="129"/><rect x="220" y="432" width="55" height="173"/><rect x="308" y="460" width="55" height="145"/><rect x="396" y="385" width="55" height="220"/><rect x="484" y="350" width="55" height="255"/><rect x="572" y="402" width="55" height="203"/><rect x="660" y="330" width="55" height="275"/><rect x="748" y="285" width="55" height="320"/><rect x="836" y="335" width="55" height="270"/><rect x="924" y="260" width="55" height="345"/></g>
+  <path d="M132 498 C260 465 330 490 420 412 S590 370 675 354 S840 310 979 280" fill="none" stroke="#7f91ac" stroke-width="10" stroke-linecap="round"/>
+  <path d="M803 280H1045V605H803Z" fill="#dfe4ec" opacity=".38"/>
+  <text x="900" y="650" font-family="Arial,sans-serif" font-size="18" fill="#65726b">FORECAST WINDOW</text>
+</svg>

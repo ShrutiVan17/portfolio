@@ -24,22 +24,26 @@ nav.querySelectorAll("a").forEach((link) => {
   });
 });
 
-filters.forEach((button) => {
-  button.addEventListener("click", () => {
-    const filter = button.dataset.filter;
-    filters.forEach((item) => item.classList.toggle("is-active", item === button));
+function applyFilter(filter, activeButton) {
+  filters.forEach((item) => item.classList.toggle("is-active", item === activeButton));
 
-    let count = 0;
-    projects.forEach((project) => {
-      const categories = project.dataset.category.split(" ");
-      const show = filter === "all" || categories.includes(filter);
-      project.classList.toggle("is-hidden", !show);
-      if (show) count += 1;
-    });
-
-    visibleCount.textContent = String(count);
+  let count = 0;
+  projects.forEach((project) => {
+    const categories = project.dataset.category.split(" ");
+    const show = filter === "all" || categories.includes(filter);
+    project.classList.toggle("is-hidden", !show);
+    if (show) count += 1;
   });
+
+  visibleCount.textContent = String(count);
+}
+
+filters.forEach((button) => {
+  button.addEventListener("click", () => applyFilter(button.dataset.filter, button));
 });
+
+const defaultFilter = document.querySelector(".filter.is-active");
+applyFilter(defaultFilter.dataset.filter, defaultFilter);
 
 const revealTargets = document.querySelectorAll(".reveal");
 
