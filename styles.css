@@ -286,6 +286,8 @@ img { max-width: 100%; }
 .project-lead .tags li::before { color: #e7ded0; }
 .case-link { position: relative; width: max-content; margin-top: 26px; font-family: "DM Mono", monospace; font-size: 10px; text-transform: uppercase; }
 .case-link span { color: var(--red); }
+.case-actions { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 18px; }
+.case-actions .case-link { margin-top: 0; }
 
 .metric-media { min-height: 320px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; color: var(--paper); background: var(--blue); }
 .metric-media > span, .metric-media small { font-family: "DM Mono", monospace; font-size: 9px; text-transform: uppercase; }

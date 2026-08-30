@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="StaySignal turns hotel cancellation risk into revenue-management decisions.">
+  <title>StaySignal — Hotel Revenue Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top"><span>SS</span> StaySignal</a>
+    <nav>
+      <a href="#performance">Performance</a>
+      <a href="#decisions">Decisions</a>
+      <a href="#model">Model trust</a>
+      <a href="https://github.com/ShrutiVan17/portfolio/tree/main/staysignal" target="_blank" rel="noopener">Code ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="eyebrow"><span class="status-dot"></span> Revenue intelligence workspace</div>
+      <div class="hero-grid">
+        <div>
+          <h1>Turn cancellation risk into <em>revenue decisions.</em></h1>
+          <p>StaySignal connects booking behavior, cancellation probability and intervention economics—so a hotel team knows what to protect, who to contact and how much inventory risk to take.</p>
+        </div>
+        <div class="hero-note">
+          <span>Decision question</span>
+          <strong>Which future bookings deserve action before their revenue disappears?</strong>
+          <small id="dateRange">Loading portfolio window…</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="kpi-section" id="performance">
+      <div class="section-heading">
+        <div><span>01 / Portfolio pulse</span><h2>One view of demand, loss and value.</h2></div>
+        <p>Booked revenue is reconciled into realized revenue and cancellation exposure at booking grain.</p>
+      </div>
+      <div class="kpi-grid">
+        <article class="kpi kpi-primary"><span>Realized revenue</span><strong id="realizedRevenue">—</strong><small id="realizationRate">—</small></article>
+        <article class="kpi"><span>Revenue at risk</span><strong id="revenueAtRisk">—</strong><small>lost to canceled stays</small></article>
+        <article class="kpi"><span>Cancellation rate</span><strong id="cancellationRate">—</strong><small id="bookingCount">—</small></article>
+        <article class="kpi"><span>Average daily rate</span><strong id="adr">—</strong><small>per occupied room night</small></article>
+      </div>
+    </section>
+
+    <section class="panel trend-panel">
+      <div class="panel-head">
+        <div><span>Monthly performance</span><h3>Revenue realized versus revenue at risk</h3></div>
+        <div class="legend"><i class="realized"></i>Realized <i class="risk"></i>At risk</div>
+      </div>
+      <div class="chart-wrap"><svg id="monthlyChart" role="img" aria-label="Monthly realized revenue and revenue at risk"></svg></div>
+    </section>
+
+    <section class="split-grid">
+      <article class="panel">
+        <div class="panel-head"><div><span>Market mix</span><h3>Where cancellation exposure sits</h3></div></div>
+        <div id="segmentBars" class="segment-bars"></div>
+      </article>
+      <article class="panel insight-panel">
+        <span>Operating signal</span>
+        <h3 id="operatingSignal">Finding the highest-risk segment…</h3>
+        <p id="operatingDetail">The dashboard ranks segments by revenue exposure, not by cancellation rate alone.</p>
+        <div class="formula">Priority = probability × booking value × recovery rate − contact cost</div>
+      </article>
+    </section>
+
+    <section class="decision-section" id="decisions">
+      <div class="section-heading light">
+        <div><span>02 / Decision engine</span><h2>From prediction to action.</h2></div>
+        <p>Only bookings with positive expected net value enter the intervention queue.</p>
+      </div>
+      <div class="decision-kpis">
+        <article><span>Actionable bookings</span><strong id="actionableBookings">—</strong></article>
+        <article><span>Expected net value</span><strong id="expectedNetValue">—</strong></article>
+        <article><span>Suggested buffer</span><strong id="overbookingBuffer">—</strong></article>
+      </div>
+      <div class="queue-card">
+        <div class="panel-head"><div><span>Priority queue</span><h3>Highest-value upcoming interventions</h3></div><small>Illustrative policy: 22% recovery, $18 contact cost</small></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Booking</th><th>Hotel</th><th>Segment</th><th>Cancel risk</th><th>Booking value</th><th>Expected net</th><th>Action</th></tr></thead>
+            <tbody id="actionTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="model-section" id="model">
+      <div class="section-heading">
+        <div><span>03 / Model trust</span><h2>Useful, tested and honest about limits.</h2></div>
+        <p>The last 20% of arrivals are held out chronologically. No post-cancellation status fields are used.</p>
+      </div>
+      <div class="model-grid">
+        <article class="score-card"><span>Temporal holdout ROC-AUC</span><strong id="rocAuc">—</strong><small id="holdoutLabel">—</small></article>
+        <article class="score-card"><span>Average precision</span><strong id="averagePrecision">—</strong><small>ranking quality under class imbalance</small></article>
+        <article class="score-card"><span>Brier score</span><strong id="brierScore">—</strong><small>lower is better for probability accuracy</small></article>
+        <article class="panel feature-card"><div class="panel-head"><div><span>Global drivers</span><h3>Permutation importance</h3></div></div><div id="featureBars" class="feature-bars"></div></article>
+      </div>
+      <div class="method-strip">
+        <div><span>Data</span><strong>Transparent synthetic demo</strong><p>Generated from documented distributions; replaceable with the standard hotel bookings schema.</p></div>
+        <div><span>Validation</span><strong>Time-based holdout</strong><p>Future arrivals are separated from training to reduce look-ahead bias.</p></div>
+        <div><span>Guardrail</span><strong>Decision support</strong><p>Recommendations require local cost, capacity and intervention assumptions.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><strong>StaySignal</strong><span>Designed and developed by Shruti Vanparia · 2026</span><a href="#top">Back to top ↑</a></footer>
+  <script src="app.js"></script>
+</body>
+</html>
+

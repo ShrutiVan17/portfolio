@@ -1,0 +1,609 @@
+{
+  "meta": {
+    "project": "StaySignal",
+    "data_type": "Synthetic demonstration data",
+    "generated_rows": 6000,
+    "date_start": "2025-01-12",
+    "date_end": "2027-02-26",
+    "model_holdout_start": "2026-03-14"
+  },
+  "kpis": {
+    "bookings": 6000,
+    "canceled_bookings": 2482,
+    "cancellation_rate": 0.4136666666666667,
+    "booked_revenue": 3595903.21,
+    "realized_revenue": 2107910.75,
+    "revenue_at_risk": 1487992.46,
+    "adr": 146.60361,
+    "average_lead_time": 74.8965
+  },
+  "model": {
+    "roc_auc": 0.6821549142543096,
+    "average_precision": 0.6077625457470516,
+    "brier_score": 0.22522283202517182,
+    "train_rows": 4800,
+    "holdout_rows": 1200,
+    "holdout_start": "2026-03-14"
+  },
+  "decisioning": {
+    "actionable_bookings": 1099,
+    "expected_net_value": 60243.649894174094,
+    "expected_revenue_saved": 80025.64989417409,
+    "recommended_overbooking_buffer": 7,
+    "minimum_simulated_cost": 257914.18
+  },
+  "monthly": [
+    {
+      "month": "2025-01",
+      "bookings": 23,
+      "cancellations": 8,
+      "booked_revenue": 12272.37,
+      "realized_revenue": 8287.14,
+      "cancellation_rate": 0.347826087,
+      "revenue_at_risk": 3985.23
+    },
+    {
+      "month": "2025-02",
+      "bookings": 109,
+      "cancellations": 33,
+      "booked_revenue": 64936.24,
+      "realized_revenue": 46438.48,
+      "cancellation_rate": 0.3027522936,
+      "revenue_at_risk": 18497.76
+    },
+    {
+      "month": "2025-03",
+      "bookings": 256,
+      "cancellations": 100,
+      "booked_revenue": 145547.81,
+      "realized_revenue": 83508.92,
+      "cancellation_rate": 0.390625,
+      "revenue_at_risk": 62038.89
+    },
+    {
+      "month": "2025-04",
+      "bookings": 312,
+      "cancellations": 106,
+      "booked_revenue": 179134.93,
+      "realized_revenue": 120260.88,
+      "cancellation_rate": 0.3397435897,
+      "revenue_at_risk": 58874.05
+    },
+    {
+      "month": "2025-05",
+      "bookings": 388,
+      "cancellations": 148,
+      "booked_revenue": 224187.07,
+      "realized_revenue": 134315.74,
+      "cancellation_rate": 0.381443299,
+      "revenue_at_risk": 89871.33
+    },
+    {
+      "month": "2025-06",
+      "bookings": 354,
+      "cancellations": 157,
+      "booked_revenue": 237707.42,
+      "realized_revenue": 129579.68,
+      "cancellation_rate": 0.4435028249,
+      "revenue_at_risk": 108127.74
+    },
+    {
+      "month": "2025-07",
+      "bookings": 401,
+      "cancellations": 193,
+      "booked_revenue": 249863.77,
+      "realized_revenue": 125652.79,
+      "cancellation_rate": 0.4812967581,
+      "revenue_at_risk": 124210.98
+    },
+    {
+      "month": "2025-08",
+      "bookings": 415,
+      "cancellations": 175,
+      "booked_revenue": 284239.72,
+      "realized_revenue": 165022.12,
+      "cancellation_rate": 0.421686747,
+      "revenue_at_risk": 119217.6
+    },
+    {
+      "month": "2025-09",
+      "bookings": 345,
+      "cancellations": 129,
+      "booked_revenue": 205530.47,
+      "realized_revenue": 130884.83,
+      "cancellation_rate": 0.3739130435,
+      "revenue_at_risk": 74645.64
+    },
+    {
+      "month": "2025-10",
+      "bookings": 426,
+      "cancellations": 160,
+      "booked_revenue": 241533.19,
+      "realized_revenue": 149072.19,
+      "cancellation_rate": 0.3755868545,
+      "revenue_at_risk": 92461.0
+    },
+    {
+      "month": "2025-11",
+      "bookings": 392,
+      "cancellations": 157,
+      "booked_revenue": 223132.96,
+      "realized_revenue": 137145.85,
+      "cancellation_rate": 0.4005102041,
+      "revenue_at_risk": 85987.11
+    },
+    {
+      "month": "2025-12",
+      "bookings": 398,
+      "cancellations": 181,
+      "booked_revenue": 255662.74,
+      "realized_revenue": 141854.32,
+      "cancellation_rate": 0.4547738693,
+      "revenue_at_risk": 113808.42
+    },
+    {
+      "month": "2026-01",
+      "bookings": 425,
+      "cancellations": 177,
+      "booked_revenue": 243713.99,
+      "realized_revenue": 141679.82,
+      "cancellation_rate": 0.4164705882,
+      "revenue_at_risk": 102034.17
+    },
+    {
+      "month": "2026-02",
+      "bookings": 363,
+      "cancellations": 145,
+      "booked_revenue": 207554.85,
+      "realized_revenue": 131086.7,
+      "cancellation_rate": 0.3994490358,
+      "revenue_at_risk": 76468.15
+    },
+    {
+      "month": "2026-03",
+      "bookings": 414,
+      "cancellations": 157,
+      "booked_revenue": 230826.05,
+      "realized_revenue": 143860.34,
+      "cancellation_rate": 0.3792270531,
+      "revenue_at_risk": 86965.71
+    },
+    {
+      "month": "2026-04",
+      "bookings": 344,
+      "cancellations": 135,
+      "booked_revenue": 198271.79,
+      "realized_revenue": 122826.41,
+      "cancellation_rate": 0.3924418605,
+      "revenue_at_risk": 75445.38
+    },
+    {
+      "month": "2026-05",
+      "bookings": 309,
+      "cancellations": 129,
+      "booked_revenue": 176395.71,
+      "realized_revenue": 103696.16,
+      "cancellation_rate": 0.4174757282,
+      "revenue_at_risk": 72699.55
+    },
+    {
+      "month": "2026-06",
+      "bookings": 152,
+      "cancellations": 84,
+      "booked_revenue": 101688.75,
+      "realized_revenue": 46008.52,
+      "cancellation_rate": 0.5526315789,
+      "revenue_at_risk": 55680.23
+    },
+    {
+      "month": "2026-07",
+      "bookings": 81,
+      "cancellations": 44,
+      "booked_revenue": 56876.51,
+      "realized_revenue": 27898.47,
+      "cancellation_rate": 0.5432098765,
+      "revenue_at_risk": 28978.04
+    },
+    {
+      "month": "2026-08",
+      "bookings": 52,
+      "cancellations": 32,
+      "booked_revenue": 36425.67,
+      "realized_revenue": 14492.5,
+      "cancellation_rate": 0.6153846154,
+      "revenue_at_risk": 21933.17
+    },
+    {
+      "month": "2026-09",
+      "bookings": 18,
+      "cancellations": 12,
+      "booked_revenue": 8440.87,
+      "realized_revenue": 2775.72,
+      "cancellation_rate": 0.6666666667,
+      "revenue_at_risk": 5665.15
+    },
+    {
+      "month": "2026-10",
+      "bookings": 12,
+      "cancellations": 10,
+      "booked_revenue": 6545.59,
+      "realized_revenue": 714.68,
+      "cancellation_rate": 0.8333333333,
+      "revenue_at_risk": 5830.91
+    },
+    {
+      "month": "2026-11",
+      "bookings": 5,
+      "cancellations": 5,
+      "booked_revenue": 2029.71,
+      "realized_revenue": 0.0,
+      "cancellation_rate": 1.0,
+      "revenue_at_risk": 2029.71
+    },
+    {
+      "month": "2026-12",
+      "bookings": 4,
+      "cancellations": 3,
+      "booked_revenue": 2735.71,
+      "realized_revenue": 848.49,
+      "cancellation_rate": 0.75,
+      "revenue_at_risk": 1887.22
+    },
+    {
+      "month": "2027-02",
+      "bookings": 2,
+      "cancellations": 2,
+      "booked_revenue": 649.32,
+      "realized_revenue": 0.0,
+      "cancellation_rate": 1.0,
+      "revenue_at_risk": 649.32
+    }
+  ],
+  "hotel_segments": [
+    {
+      "hotel_type": "Resort Hotel",
+      "bookings": 2235,
+      "cancellations": 930,
+      "booked_revenue": 1858699.53,
+      "realized_revenue": 1077344.23,
+      "adr": 165.213409396,
+      "cancellation_rate": 0.4161073826,
+      "revenue_at_risk": 781355.3
+    },
+    {
+      "hotel_type": "City Hotel",
+      "bookings": 3765,
+      "cancellations": 1552,
+      "booked_revenue": 1737203.68,
+      "realized_revenue": 1030566.52,
+      "adr": 135.5563585657,
+      "cancellation_rate": 0.4122177955,
+      "revenue_at_risk": 706637.1599999999
+    }
+  ],
+  "market_segments": [
+    {
+      "market_segment": "Online TA",
+      "bookings": 2582,
+      "cancellations": 1266,
+      "booked_revenue": 1558190.12,
+      "realized_revenue": 804909.68,
+      "adr": 146.8515879163,
+      "cancellation_rate": 0.4903175833,
+      "revenue_at_risk": 753280.4400000001
+    },
+    {
+      "market_segment": "Direct",
+      "bookings": 1378,
+      "cancellations": 477,
+      "booked_revenue": 825266.76,
+      "realized_revenue": 537719.85,
+      "adr": 146.8280478955,
+      "cancellation_rate": 0.3461538462,
+      "revenue_at_risk": 287546.91
+    },
+    {
+      "market_segment": "Offline TA",
+      "bookings": 1059,
+      "cancellations": 379,
+      "booked_revenue": 630107.51,
+      "realized_revenue": 406584.99,
+      "adr": 147.5363928234,
+      "cancellation_rate": 0.357884797,
+      "revenue_at_risk": 223522.52
+    },
+    {
+      "market_segment": "Groups",
+      "bookings": 392,
+      "cancellations": 179,
+      "booked_revenue": 245395.15,
+      "realized_revenue": 130337.02,
+      "adr": 146.1560969388,
+      "cancellation_rate": 0.4566326531,
+      "revenue_at_risk": 115058.13
+    },
+    {
+      "market_segment": "Corporate",
+      "bookings": 589,
+      "cancellations": 181,
+      "booked_revenue": 336943.67,
+      "realized_revenue": 228359.21,
+      "adr": 143.6121901528,
+      "cancellation_rate": 0.3073005093,
+      "revenue_at_risk": 108584.46
+    }
+  ],
+  "lead_time_bands": [
+    {
+      "lead_time_band": "46\u201390",
+      "bookings": 2263,
+      "cancellations": 927,
+      "booked_revenue": 1342152.64,
+      "realized_revenue": 793160.05,
+      "adr": 144.7961555457,
+      "cancellation_rate": 0.4096332302,
+      "revenue_at_risk": 548992.5899999999
+    },
+    {
+      "lead_time_band": "91\u2013180",
+      "bookings": 1534,
+      "cancellations": 729,
+      "booked_revenue": 941687.27,
+      "realized_revenue": 491868.21,
+      "adr": 149.8893741851,
+      "cancellation_rate": 0.4752281617,
+      "revenue_at_risk": 449819.06
+    },
+    {
+      "lead_time_band": "15\u201345",
+      "bookings": 1655,
+      "cancellations": 564,
+      "booked_revenue": 974436.55,
+      "realized_revenue": 646327.27,
+      "adr": 145.4568640483,
+      "cancellation_rate": 0.3407854985,
+      "revenue_at_risk": 328109.28
+    },
+    {
+      "lead_time_band": "181+",
+      "bookings": 262,
+      "cancellations": 171,
+      "booked_revenue": 164539.64,
+      "realized_revenue": 57238.07,
+      "adr": 152.3669847328,
+      "cancellation_rate": 0.6526717557,
+      "revenue_at_risk": 107301.57
+    },
+    {
+      "lead_time_band": "0\u201314",
+      "bookings": 286,
+      "cancellations": 91,
+      "booked_revenue": 173087.11,
+      "realized_revenue": 119317.15,
+      "adr": 144.6377622378,
+      "cancellation_rate": 0.3181818182,
+      "revenue_at_risk": 53769.96
+    }
+  ],
+  "feature_importance": [
+    {
+      "feature": "deposit_type",
+      "importance": 0.0809256497
+    },
+    {
+      "feature": "lead_time",
+      "importance": 0.0404810507
+    },
+    {
+      "feature": "special_requests",
+      "importance": 0.0170549243
+    },
+    {
+      "feature": "market_segment",
+      "importance": 0.0065439271
+    },
+    {
+      "feature": "is_repeated_guest",
+      "importance": 0.0028252897
+    },
+    {
+      "feature": "customer_type",
+      "importance": 0.0011664554
+    },
+    {
+      "feature": "previous_bookings_not_canceled",
+      "importance": 0.0008064245
+    },
+    {
+      "feature": "previous_cancellations",
+      "importance": 0.0007598784
+    }
+  ],
+  "overbooking": [
+    {
+      "buffer_rooms": 0,
+      "empty_room_cost": 264610.46,
+      "walk_cost": 0.0,
+      "total_cost": 264610.46,
+      "is_recommended": false
+    },
+    {
+      "buffer_rooms": 1,
+      "empty_room_cost": 261924.71,
+      "walk_cost": 0.0,
+      "total_cost": 261924.71,
+      "is_recommended": false
+    },
+    {
+      "buffer_rooms": 2,
+      "empty_room_cost": 260048.21,
+      "walk_cost": 0.0,
+      "total_cost": 260048.21,
+      "is_recommended": false
+    },
+    {
+      "buffer_rooms": 3,
+      "empty_room_cost": 258926.32,
+      "walk_cost": 0.0,
+      "total_cost": 258926.32,
+      "is_recommended": false
+    },
+    {
+      "buffer_rooms": 4,
+      "empty_room_cost": 258385.41,
+      "walk_cost": 0.0,
+      "total_cost": 258385.41,
+      "is_recommended": false
+    },
+    {
+      "buffer_rooms": 5,
+      "empty_room_cost": 258144.8,
+      "walk_cost": 0.0,
+      "total_cost": 258144.8,
+      "is_recommended": false
+    },
+    {
+      "buffer_rooms": 6,
+      "empty_room_cost": 257984.9,
+      "walk_cost": 0.0,
+      "total_cost": 257984.9,
+      "is_recommended": false
+    },
+    {
+      "buffer_rooms": 7,
+      "empty_room_cost": 257914.18,
+      "walk_cost": 0.0,
+      "total_cost": 257914.18,
+      "is_recommended": true
+    },
+    {
+      "buffer_rooms": 8,
+      "empty_room_cost": 257914.18,
+      "walk_cost": 0.0,
+      "total_cost": 257914.18,
+      "is_recommended": false
+    }
+  ],
+  "top_actions": [
+    {
+      "booking_id": "BK-004212",
+      "hotel_type": "Resort Hotel",
+      "market_segment": "Online TA",
+      "arrival_date": 1774656000000,
+      "cancellation_probability": 0.7421205117,
+      "booked_revenue": 1820.08,
+      "expected_net_value": 279.1581141948,
+      "recommended_action": "Priority outreach"
+    },
+    {
+      "booking_id": "BK-001530",
+      "hotel_type": "Resort Hotel",
+      "market_segment": "Groups",
+      "arrival_date": 1776470400000,
+      "cancellation_probability": 0.6062968546,
+      "booked_revenue": 2105.68,
+      "expected_net_value": 262.8667753537,
+      "recommended_action": "Automated reminder"
+    },
+    {
+      "booking_id": "BK-005463",
+      "hotel_type": "Resort Hotel",
+      "market_segment": "Online TA",
+      "arrival_date": 1776643200000,
+      "cancellation_probability": 0.7837317867,
+      "booked_revenue": 1583.7,
+      "expected_net_value": 255.0631267274,
+      "recommended_action": "Priority outreach"
+    },
+    {
+      "booking_id": "BK-002122",
+      "hotel_type": "Resort Hotel",
+      "market_segment": "Online TA",
+      "arrival_date": 1786233600000,
+      "cancellation_probability": 0.6298447304,
+      "booked_revenue": 1775.69,
+      "expected_net_value": 228.0499776609,
+      "recommended_action": "Automated reminder"
+    },
+    {
+      "booking_id": "BK-003310",
+      "hotel_type": "City Hotel",
+      "market_segment": "Online TA",
+      "arrival_date": 1776556800000,
+      "cancellation_probability": 0.6390515652,
+      "booked_revenue": 1693.71,
+      "expected_net_value": 220.1209658429,
+      "recommended_action": "Automated reminder"
+    },
+    {
+      "booking_id": "BK-004678",
+      "hotel_type": "Resort Hotel",
+      "market_segment": "Offline TA",
+      "arrival_date": 1773446400000,
+      "cancellation_probability": 0.5562885696,
+      "booked_revenue": 1900.56,
+      "expected_net_value": 214.5971568329,
+      "recommended_action": "Automated reminder"
+    },
+    {
+      "booking_id": "BK-001269",
+      "hotel_type": "Resort Hotel",
+      "market_segment": "Direct",
+      "arrival_date": 1781481600000,
+      "cancellation_probability": 0.6188848935,
+      "booked_revenue": 1691.41,
+      "expected_net_value": 212.2933814827,
+      "recommended_action": "Automated reminder"
+    },
+    {
+      "booking_id": "BK-000606",
+      "hotel_type": "Resort Hotel",
+      "market_segment": "Online TA",
+      "arrival_date": 1774742400000,
+      "cancellation_probability": 0.615216727,
+      "booked_revenue": 1698.0,
+      "expected_net_value": 211.8203605442,
+      "recommended_action": "Automated reminder"
+    },
+    {
+      "booking_id": "BK-001040",
+      "hotel_type": "City Hotel",
+      "market_segment": "Online TA",
+      "arrival_date": 1774656000000,
+      "cancellation_probability": 0.6831259213,
+      "booked_revenue": 1512.7,
+      "expected_net_value": 209.340207866,
+      "recommended_action": "Priority outreach"
+    },
+    {
+      "booking_id": "BK-004438",
+      "hotel_type": "Resort Hotel",
+      "market_segment": "Groups",
+      "arrival_date": 1785801600000,
+      "cancellation_probability": 0.6412527234,
+      "booked_revenue": 1582.64,
+      "expected_net_value": 205.2718862398,
+      "recommended_action": "Automated reminder"
+    },
+    {
+      "booking_id": "BK-000035",
+      "hotel_type": "Resort Hotel",
+      "market_segment": "Corporate",
+      "arrival_date": 1779235200000,
+      "cancellation_probability": 0.6132247935,
+      "booked_revenue": 1611.63,
+      "expected_net_value": 199.4241242537,
+      "recommended_action": "Automated reminder"
+    },
+    {
+      "booking_id": "BK-002693",
+      "hotel_type": "Resort Hotel",
+      "market_segment": "Online TA",
+      "arrival_date": 1777939200000,
+      "cancellation_probability": 0.6779261178,
+      "booked_revenue": 1454.4,
+      "expected_net_value": 198.9146640658,
+      "recommended_action": "Priority outreach"
+    }
+  ]
+}
