@@ -73,6 +73,10 @@ textarea {
   backdrop-filter: blur(16px);
 }
 
+.header.is-scrolled {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
 .brand {
   justify-self: start;
 
@@ -228,7 +232,7 @@ textarea {
 }
 
 
-/* GENERAL SECTION */
+/* GENERAL SECTIONS */
 
 .section {
   width: min(calc(100% - 44px), var(--max));
@@ -265,7 +269,7 @@ textarea {
 }
 
 
-/* FEATURED PROJECT */
+/* FEATURED PARKSAFE */
 
 .featured-project {
   margin-bottom: 24px;
@@ -690,11 +694,14 @@ textarea {
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 
-  transition: background 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .small-projects article:hover {
   background: var(--soft);
+  transform: translateY(-2px);
 }
 
 .small-projects article > span {
@@ -746,6 +753,10 @@ textarea {
   padding-top: 36px;
 
   border-top: 1px solid var(--ink);
+}
+
+.experience-row + .experience-row {
+  margin-top: 70px;
 }
 
 .experience-meta > span {
@@ -961,6 +972,14 @@ textarea {
 }
 
 
+/* ACCESSIBILITY */
+
+a:focus-visible {
+  outline: 2px solid var(--blue-dark);
+  outline-offset: 5px;
+}
+
+
 /* RESPONSIVE */
 
 @media (max-width: 1000px) {
@@ -1097,6 +1116,21 @@ textarea {
 
   .contact-section footer {
     flex-direction: column;
+  }
+
+}
+
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
   }
 
 }
