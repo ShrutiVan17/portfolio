@@ -1,68 +1,76 @@
-const header = document.getElementById("siteHeader");
-const menuButton = document.getElementById("menuButton");
-const nav = document.getElementById("siteNav");
-const filters = [...document.querySelectorAll(".filter")];
-const projects = [...document.querySelectorAll(".project")];
-const visibleCount = document.getElementById("visibleCount");
+document.getElementById("year").textContent =
+  String(new Date().getFullYear());
 
-function updateHeader() {
-  header.classList.toggle("is-scrolled", window.scrollY > 18);
+const header = document.querySelector(".header");
+
+function handleHeader() {
+  if (!header) return;
+
+  if (window.scrollY > 20) {
+    header.classList.add("is-scrolled");
+  } else {
+    header.classList.remove("is-scrolled");
+  }
 }
 
-updateHeader();
-window.addEventListener("scroll", updateHeader, { passive: true });
+handleHeader();
 
-menuButton.addEventListener("click", () => {
-  const isOpen = header.classList.toggle("nav-open");
-  menuButton.setAttribute("aria-expanded", String(isOpen));
+window.addEventListener("scroll", handleHeader, {
+  passive: true
 });
 
-nav.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    header.classList.remove("nav-open");
-    menuButton.setAttribute("aria-expanded", "false");
-  });
-});
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const targetId = link.getAttribute("href");
 
-function applyFilter(filter, activeButton) {
-  filters.forEach((item) => item.classList.toggle("is-active", item === activeButton));
+    if (!targetId || targetId === "#") return;
 
-  let count = 0;
-  projects.forEach((project) => {
-    const categories = project.dataset.category.split(" ");
-    const show = filter === "all" || categories.includes(filter);
-    project.classList.toggle("is-hidden", !show);
-    if (show) count += 1;
-  });
+    const target = document.querySelector(targetId);
 
-  visibleCount.textContent = String(count);
-}
+    if (!target) return;
 
-filters.forEach((button) => {
-  button.addEventListener("click", () => applyFilter(button.dataset.filter, button));
-});
+    event.preventDefault();
 
-const defaultFilter = document.querySelector(".filter.is-active");
-applyFilter(defaultFilter.dataset.filter, defaultFilter);
-
-const revealTargets = document.querySelectorAll(".reveal");
-
-if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      }
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
     });
-  }, { threshold: 0.08, rootMargin: "0px 0px -30px" });
-
-  revealTargets.forEach((target, index) => {
-    target.style.transitionDelay = `${Math.min(index % 4, 3) * 45}ms`;
-    observer.observe(target);
   });
-} else {
-  revealTargets.forEach((target) => target.classList.add("is-visible"));
-}
+});
 
-document.getElementById("year").textContent = String(new Date().getFullYear());
+const revealElements = document.querySelectorAll(
+  ".project-card, .featured-project, .small-projects article, .experience-row, .capabilities > div, .education-section > div"
+);
+
+if (
+  "IntersectionObserver" in window &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
+  revealElements.forEach((element) => {
+    element.style.opacity = "0";
+    element.style.transform = "translateY(20px)";
+    element.style.transition =
+      "opacity 0.55s ease, transform 0.55s ease";
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.08,
+      rootMargin: "0px 0px -40px 0px"
+    }
+  );
+
+  revealElements.forEach((element) => {
+    observer.observe(element);
+  });
+}
