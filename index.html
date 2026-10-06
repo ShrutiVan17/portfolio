@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shruti Vanparia — AI/ML Engineer</title>
-  <meta name="description" content="Shruti Vanparia is an AI/ML Engineer building LLM applications, RAG pipelines, agentic AI workflows, and conversational AI in production.">
+  <meta name="description" content="Shruti Vanparia is an AI/ML Engineer in Dallas, open to relocation. Explore model adaptation, AI agents, browser video processing, and evaluated Python applications.">
   <meta property="og:title" content="Shruti Vanparia — AI/ML Engineer">
-  <meta property="og:description" content="LLM applications, RAG pipelines, agentic AI, and conversational AI in production.">
+  <meta property="og:description" content="Model adaptation, AI agents, evaluation, and Python applications. Dallas · Open to relocation.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -170,9 +170,38 @@
       .stats { grid-template-columns: 1fr; }
       .card-foot { flex-direction: column; align-items: flex-start; }
     }
+
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    section[id] { scroll-margin-top: 84px; }
+    .skip-link { position:absolute; top:-100px; left:20px; padding:12px; background:var(--surface); z-index:50; }
+    .skip-link:focus { top:12px; }
+    .stat strong { font-size:17px; line-height:1.4; margin-bottom:5px; }
+    .filters { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+    .filter { font:inherit; font-size:13px; cursor:pointer; padding:9px 14px; border:1px solid var(--line); border-radius:999px; background:var(--surface); color:var(--ink); }
+    .filter[aria-pressed="true"] { background:var(--accent); color:#fff; border-color:var(--accent); }
+    [hidden] { display:none !important; }
+    .project-count { font-size:13px; color:var(--muted); margin-bottom:16px; }
+    .card-foot { flex-wrap:wrap; }
+    .card-foot .stack { flex-basis:100%; }
+    .evidence { padding:12px; background:var(--accent-soft); border-radius:8px; font-size:13px; margin-bottom:16px; }
+    .directory { margin-top:44px; }
+    .directory summary { cursor:pointer; font-size:20px; font-weight:700; padding:16px 0; }
+    .directory-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:16px; }
+    .directory-group { padding:20px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); }
+    .directory-group h3 { font-size:17px; margin-bottom:12px; }
+    .directory-group ul { list-style:none; }
+    .directory-group li { margin-bottom:14px; font-size:14px; }
+    .directory-group a { font-weight:600; color:var(--accent); }
+    .directory-group small { display:block; color:var(--muted); font-size:13px; margin-top:3px; }
+    .visual.policy img { object-fit:contain; }
+    @media(max-width:820px) { .directory-grid { grid-template-columns:1fr; } .stats { grid-template-columns:1fr; } }
+    @media(max-width:480px) { .brand { font-size:13px; gap:6px; } .nav { gap:8px; } .nav .btn { padding:8px 10px; font-size:12px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+
   </style>
 </head>
 <body>
+<a class="skip-link" href="#work">Skip to projects</a>
 
 <header>
   <div class="wrap nav">
@@ -192,21 +221,22 @@
 
   <!-- 1. HERO -->
   <section class="wrap hero">
-    <div class="kicker">AI/ML Engineer · Plano, TX</div>
-    <h1>I build AI that works<br><em>in production.</em></h1>
-    <p class="lead">LLM applications, RAG pipelines, agentic AI workflows, and conversational AI, from retrieval and prompt design through inference APIs, evaluation, and monitoring.</p>
+    <div class="kicker">AI/ML Engineer · Dallas, TX · Open to relocation</div>
+    <h1>I build AI applications.<br><em>I test how they fail.</em></h1>
+    <p class="lead">From customer-specific model adaptation to evidence-based agents and browser video processing. Explore the code, try the demos, and inspect the engineering decisions.</p>
     <div class="hero-actions">
-      <a class="btn solid" href="#work">See my work ↓</a>
+      <a class="btn solid" href="#work">Explore recent work ↓</a>
+      <a class="btn" href="mailto:s.vanparia8@gmail.com?subject=AI%2FML%20Engineering%20Opportunity">Discuss a role ↗</a>
       <a class="btn" href="https://github.com/ShrutiVan17" target="_blank" rel="noopener">GitHub ↗</a>
       <a class="btn" href="https://www.linkedin.com/in/shruti-17s/" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
     <div class="stats">
-      <div class="stat"><strong>3+ yrs</strong><span>building AI & ML systems</span></div>
-      <div class="stat"><strong>0.74 → 0.82</strong><span>F1 lift on query classification</span></div>
-      <div class="stat"><strong>10–12%</strong><span>fewer chatbot fallbacks</span></div>
+      <div class="stat"><strong>Model adaptation</strong><span>MiniLM · PyTorch · LoRA</span></div>
+      <div class="stat"><strong>Evidence first</strong><span>Retrieval · Verification · Human review</span></div>
+      <div class="stat"><strong>Inspect the work</strong><span>Code · Demos · Evaluation records</span></div>
     </div>
     <div class="chips">
-      <span class="chip">RAG</span><span class="chip">Agentic AI</span><span class="chip">LangGraph</span>
+      <span class="chip">PyTorch</span><span class="chip">LoRA</span><span class="chip">RAG</span><span class="chip">Agentic AI</span><span class="chip">LangGraph</span>
       <span class="chip">Azure OpenAI</span><span class="chip">Amazon Bedrock</span><span class="chip">Gemini</span>
       <span class="chip">Dialogflow CX</span><span class="chip">FastAPI</span><span class="chip">Python</span>
     </div>
@@ -216,12 +246,29 @@
   <section class="block" id="work">
     <div class="wrap">
       <div class="eyebrow">01 / Selected work</div>
-      <h2>Agentic and retrieval-grounded AI projects</h2>
-      <p class="intro">Each project keeps AI decisions explainable, with verification steps, grounded answers, and deterministic fallbacks when a model or service is unavailable.</p>
+      <h2>Recent work, with evidence you can inspect</h2>
+      <p class="intro">Start with Policy Switchboard and ClearDrop, then explore agents and predictive ML. Public demos, recorded interfaces, and static dashboards are labelled separately.</p>
 
+<div class="filters" aria-label="Filter selected projects" hidden>
+<button type="button" class="filter" data-filter="all" aria-pressed="true">All projects</button>
+<button type="button" class="filter" data-filter="adaptation" aria-pressed="false">Model adaptation</button>
+<button type="button" class="filter" data-filter="agents" aria-pressed="false">AI agents &amp; retrieval</button>
+<button type="button" class="filter" data-filter="vision" aria-pressed="false">Browser video</button>
+<button type="button" class="filter" data-filter="predictive" aria-pressed="false">Predictive ML</button>
+</div><p class="project-count" role="status" aria-live="polite">Showing 6 selected projects</p>
       <div class="projects">
+<article class="card" data-category="adaptation">
+<div class="visual policy"><img src="https://raw.githubusercontent.com/ShrutiVan17/policy-switchboard/main/docs/assets/architecture.svg" alt="Policy Switchboard architecture: deterministic rules, trusted context, customer adapters, and evaluation gates" loading="lazy"></div>
+<div class="card-body"><span class="tag">Model adaptation · Evaluation</span><h3>Policy Switchboard</h3><div class="sub">Recent work · Hybrid policy classifier</div>
+<p class="desc">An applied ML lab that combines customer-specific MiniLM LoRA adapters with versioned business rules. A $15 refund can pass under a $20 limit and require review when the policy drops to $10.</p><ul><li>Tenant-owned ticket context and redacted evidence through FastAPI</li><li>Evaluation gates before candidate activation, plus rollback support</li></ul><p class="evidence">Recorded frozen synthetic test: LoRA 66/66, zero unsafe approvals; matched frozen-encoder baseline 62/66, one unsafe approval. Facts and arithmetic are computed outside the neural model. Small synthetic evaluation; neural delivery remains in shadow research mode.</p>
+<div class="card-foot"><span class="stack">Python · PyTorch · PEFT / LoRA · FastAPI · SQLite</span><a href="https://github.com/ShrutiVan17/policy-switchboard" target="_blank" rel="noopener">Code & evaluation ↗</a><a href="https://github.com/ShrutiVan17/policy-switchboard/blob/main/docs/assets/app-demo.gif" target="_blank" rel="noopener">App recording ↗</a></div></div></article>
+<article class="card" data-category="vision">
+<div class="visual "><div class="flow-visual"><div class="flow-label">LOCAL BROWSER VIDEO PROCESSING</div><div class="steps"><span class="step">Marked area</span><span class="arrow">→</span><span class="step">Scene change</span><span class="arrow">→</span><span class="step hl">Human review</span></div><div class="flow-label">CAMERA DISCONNECT → REMOVAL UNKNOWN</div></div></div>
+<div class="card-body"><span class="tag">Browser video · Human review</span><h3>ClearDrop</h3><div class="sub">Recent work · Public interactive prototype</div>
+<p class="desc">A doorway-access prototype that checks a personally marked area for persistent scene changes and keeps delivery removal under human review.</p><ul><li>Phone-camera input and generated-video checks use the same monitoring component</li><li>Local frame processing, review-history export, and unknown-first disconnect handling</li></ul><p class="evidence">Scene-change detection is not parcel recognition or a guarantee of physical clearance. Free hosting may take about a minute to wake.</p>
+<div class="card-foot"><span class="stack">Next.js · TypeScript · Browser video · WebRTC</span><a href="https://cleardrop-shrutivan17.onrender.com/" target="_blank" rel="noopener">Try public demo ↗</a><a href="https://github.com/ShrutiVan17/cleardrop/blob/main/docs/engineering-case-study.md" target="_blank" rel="noopener">Engineering case study ↗</a></div></div></article>
 
-        <article class="card">
+        <article class="card" data-category="agents">
           <div class="visual">
             <div class="flow-visual">
               <div class="flow-label">FOUR-STAGE AGENT WORKFLOW</div>
@@ -245,12 +292,13 @@
             </ul>
             <div class="card-foot">
               <span class="stack">Strands Agents SDK · Gemini · Bedrock · Streamlit</span>
-              <a href="https://github.com/ShrutiVan17/RecallRadar" target="_blank" rel="noopener">View code ↗</a>
+              <a href="https://recallradar-ofegn2yso5jbkc3tpgejhm.streamlit.app/" target="_blank" rel="noopener">Try guided demo ↗</a>
+<a href="https://github.com/ShrutiVan17/RecallRadar" target="_blank" rel="noopener">View code ↗</a>
             </div>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" data-category="agents">
           <div class="visual">
             <div class="flow-visual">
               <div class="flow-label">EVIDENCE-BASED VERIFICATION</div>
@@ -279,7 +327,7 @@
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" data-category="agents">
           <div class="visual"><img src="project-parksafe-ai.webp" alt="ParSafe parking recommendation interface" loading="lazy"></div>
           <div class="card-body">
             <span class="tag">RAG · Decision support</span>
@@ -297,7 +345,7 @@
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" data-category="predictive">
           <div class="visual"><img src="project-dental-ai-real.webp" alt="Dental Operations Strategist interface" loading="lazy"></div>
           <div class="card-body">
             <span class="tag">Predictive ML · What-if planning</span>
@@ -316,6 +364,9 @@
         </article>
 
       </div>
+<details class="directory" open><summary>More projects, organized by category</summary>
+<p class="intro">Explore the rest of my public repositories. Analytics demos show project data and stated assumptions.</p>
+<div class="directory-grid"><div class="directory-group"><h3>Applied ML & decision analytics</h3><ul><li><a href="https://github.com/ShrutiVan17/telecom" target="_blank" rel="noopener">ChurnSignal ↗</a> · <a href="https://shrutivan17.github.io/telecom/" target="_blank" rel="noopener">Dashboard ↗</a><small>Customer churn modeling, 14 data-quality checks, and an expected-value retention queue.</small></li><li><a href="https://github.com/ShrutiVan17/staysignal_hotel" target="_blank" rel="noopener">StaySignal ↗</a> · <a href="https://shrutivan17.github.io/staysignal_hotel/" target="_blank" rel="noopener">Dashboard ↗</a><small>Chronological cancellation modeling and an overbooking cost simulator; synthetic demo data.</small></li><li><a href="https://github.com/ShrutiVan17/FreightPlus" target="_blank" rel="noopener">FreightPlus ↗</a> · <a href="https://shrutivan17.github.io/FreightPlus/" target="_blank" rel="noopener">Dashboard ↗</a><small>Inbound logistics control tower and delay-risk queue; synthetic shipments.</small></li><li><a href="https://github.com/ShrutiVan17/climate-risk" target="_blank" rel="noopener">Climate Risk Copilot ↗</a><small>Clustering, anomaly detection, and climate stress scenarios. Original dataset is not included.</small></li></ul></div><div class="directory-group"><h3>Product prototypes & utilities</h3><ul><li><a href="https://github.com/ShrutiVan17/food_waste" target="_blank" rel="noopener">FreshTurn ↗</a><small>Restaurant inventory and surplus marketplace prototype with browser-local persistence.</small></li><li><a href="https://github.com/ShrutiVan17/Youtube-comment-project" target="_blank" rel="noopener">YouTube Comment Downloader ↗</a><small>Utility/reference repository for exporting YouTube comments.</small></li></ul></div><div class="directory-group"><h3>Portfolio & profile</h3><ul><li><a href="https://github.com/ShrutiVan17/portfolio" target="_blank" rel="noopener">Portfolio website ↗</a><small>This static GitHub Pages website.</small></li><li><a href="https://github.com/ShrutiVan17/ShrutiVan17" target="_blank" rel="noopener">GitHub profile ↗</a><small>Categorized repository directory and professional overview.</small></li></ul></div></div></details>
     </div>
   </section>
 
@@ -331,7 +382,7 @@
           <div class="role-meta">
             <div class="when">Aug 2024 – Present</div>
             <h3>AI/ML Engineer</h3>
-            <div class="org">Verizon</div>
+            <div class="org">Verizon · Contract</div>
             <div class="where">Dallas, TX</div>
           </div>
           <ul>
@@ -347,7 +398,7 @@
 
         <div class="role">
           <div class="role-meta">
-            <div class="when">Apr 2023 – Jul 2024</div>
+            <div class="when">Jan 2023 – May 2024</div>
             <h3>Software Engineer</h3>
             <div class="org">Shreeji Plast Pvt. Ltd</div>
             <div class="where">Gujarat, India</div>
@@ -399,7 +450,7 @@
         <div class="skill-group">
           <h3>Machine Learning & NLP</h3>
           <div class="chips">
-            <span class="chip">scikit-learn</span><span class="chip">XGBoost</span><span class="chip">SHAP</span><span class="chip">PySpark</span>
+            <span class="chip">PyTorch</span><span class="chip">PEFT / LoRA</span><span class="chip">Transformers</span><span class="chip">scikit-learn</span><span class="chip">XGBoost</span><span class="chip">SHAP</span><span class="chip">PySpark</span>
             <span class="chip">Classification</span><span class="chip">Forecasting</span><span class="chip">NLP</span><span class="chip">TF-IDF</span>
           </div>
         </div>
@@ -446,7 +497,7 @@
   <section class="wrap contact" id="contact">
     <div class="eyebrow">05 / Contact</div>
     <h2>Let's build something reliable.</h2>
-    <p>I'm open to AI/ML Engineer and Generative AI roles. The fastest way to reach me is email.</p>
+    <p>I'm seeking AI/ML Engineer and Generative AI Engineer opportunities. Based in Dallas and open to relocation. Email me to discuss your team and interview availability.</p>
     <div class="hero-actions">
       <a class="btn solid" href="mailto:s.vanparia8@gmail.com">s.vanparia8@gmail.com</a>
       <a class="btn" href="https://www.linkedin.com/in/shruti-17s/" target="_blank" rel="noopener">LinkedIn ↗</a>
@@ -456,7 +507,21 @@
 
 </main>
 
-<footer>© 2026 Shruti Vanparia · Plano, TX</footer>
+<footer>© 2026 Shruti Vanparia · Dallas, TX · Open to relocation</footer>
 
+<script>
+const filters = document.querySelector('.filters');
+const cards = [...document.querySelectorAll('.projects .card')];
+filters.hidden = false;
+filters.addEventListener('click', event => {
+  const button = event.target.closest('button[data-filter]');
+  if (!button) return;
+  filters.querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+  const category = button.dataset.filter;
+  cards.forEach(card => { card.hidden = category !== 'all' && card.dataset.category !== category; });
+  const count = cards.filter(card => !card.hidden).length;
+  document.querySelector('.project-count').textContent = 'Showing ' + count + ' selected project' + (count === 1 ? '' : 's');
+});
+</script>
 </body>
 </html>
