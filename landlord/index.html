@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Landlord pricing redesign concept by Shruti Vanparia</title>
+<meta name="description" content="An unofficial redesign concept of the Landlord pricing page, designed and built by Shruti Vanparia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
+<style>
+  /*
+    Tokens
+    sky-top #0D1830, sky-low #24395F   the facility at night
+    lamp    #FFB547                     sodium streetlight, used for "something just happened"
+    door    #7DC869 / #66B353           Landlord green, as roll-up doors
+    concrete #ECEDE7                    daytime sections
+    ink     #15201A
+    Type: Bricolage Grotesque, condensed and heavy for display, normal width for reading.
+  */
+  :root {
+    --sky-top: #0D1830; --sky-low: #24395F; --sky-text: #E8EEF8; --sky-muted: #9EB0CF;
+    --lamp: #FFB547; --door: #7DC869; --door-shade: #66B353; --deep: #2F6B22;
+    --concrete: #ECEDE7; --concrete-2: #D9DBD3; --ink: #15201A; --ink-2: rgba(21,32,26,.74); --ink-3: rgba(21,32,26,.58);
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); background: var(--concrete); line-height: 1.5; }
+  h1, h2, h3, p { margin: 0; }
+  a { color: inherit; }
+  button, input { font: inherit; }
+  :focus-visible { outline: 3px solid var(--lamp); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .disp { font-stretch: 78%; font-variation-settings: "wdth" 78; font-weight: 800; letter-spacing: -0.015em; line-height: 0.92; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 8px; font-weight: 700; font-size: 16.5px; text-decoration: none; cursor: pointer; border: 0; white-space: nowrap; }
+  .btn-door { background: var(--door); color: var(--ink); box-shadow: inset 0 -3px 0 var(--door-shade); }
+  .btn-door:hover { background: #8DD27A; }
+  .btn-ghost { background: rgba(232,238,248,.08); color: var(--sky-text); border: 1.5px solid rgba(232,238,248,.35); }
+  .btn-ghost:hover { background: rgba(232,238,248,.16); }
+  .btn-ink { background: var(--ink); color: #fff; }
+  .btn-line { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+
+  /* Concept notice */
+  .concept { background: #060C18; color: #C5D0E4; font-size: 13.5px; }
+  .concept .wrap { display: flex; flex-wrap: wrap; gap: 4px 14px; justify-content: center; padding-top: 8px; padding-bottom: 8px; text-align: center; }
+  .concept a { color: #fff; font-weight: 600; text-underline-offset: 3px; }
+
+  /* ===== Night hero ===== */
+  .night { position: relative; overflow: hidden; color: var(--sky-text); background:
+      radial-gradient(900px 420px at 82% 8%, rgba(70,100,160,.35), transparent 70%),
+      linear-gradient(180deg, var(--sky-top) 0%, #16264A 55%, var(--sky-low) 100%); }
+  .stars { position: absolute; inset: 0; pointer-events: none; background-image:
+      radial-gradient(1.4px 1.4px at 12% 18%, #fff 50%, transparent 51%), radial-gradient(1px 1px at 28% 9%, #fff 50%, transparent 51%),
+      radial-gradient(1.2px 1.2px at 47% 22%, #fff 50%, transparent 51%), radial-gradient(1px 1px at 63% 12%, #fff 50%, transparent 51%),
+      radial-gradient(1.4px 1.4px at 74% 30%, #fff 50%, transparent 51%), radial-gradient(1px 1px at 89% 16%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 36% 34%, #fff 50%, transparent 51%), radial-gradient(1.2px 1.2px at 6% 38%, #fff 50%, transparent 51%);
+    opacity: .55; }
+  .moon { position: absolute; right: 1.6%; top: 96px; width: 54px; height: 54px; border-radius: 50%; background: #F3EBD3; box-shadow: 0 0 60px 10px rgba(243,235,211,.18); }
+  .moon::after { content: ""; position: absolute; inset: -2px -2px 0 14px; border-radius: 50%; background: #1A2B50; }
+
+  header.site { position: relative; z-index: 5; }
+  header.site .wrap { height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .wordmark { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; font-size: 16px; text-decoration: none; }
+  .wordmark i { width: 9px; height: 22px; border-radius: 2px; background: linear-gradient(180deg, #A6DB97, #5FAF4B); }
+  nav.main { display: flex; gap: 2px; font-size: 15px; font-weight: 500; }
+  nav.main a { text-decoration: none; padding: 8px 12px; border-radius: 8px; color: var(--sky-muted); }
+  nav.main a:hover { color: #fff; }
+  nav.main a[aria-current="page"] { color: #fff; font-weight: 700; }
+  header.site .btn { min-height: 42px; font-size: 15px; padding: 0 16px; }
+
+  .hero { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 48px; align-items: start; padding-top: 44px; padding-bottom: 36px; }
+  .hero h1 { font-size: clamp(58px, 8vw, 116px); }
+  .hero h1 span { display: block; }
+  .hero h1 .lamp { color: var(--lamp); }
+  .sub { margin-top: 20px; font-size: clamp(18px, 1.5vw, 20px); color: var(--sky-muted); }
+
+  .pricebar { margin-top: 28px; display: flex; align-items: center; gap: 18px 22px; flex-wrap: wrap; padding: 16px 18px; border-radius: 12px; background: rgba(232,238,248,.07); border: 1px solid rgba(232,238,248,.14); max-width: 560px; }
+  .pricebar .q { font-size: 14.5px; color: var(--sky-muted); width: 100%; }
+  .stepper { display: inline-flex; align-items: center; border-radius: 8px; background: rgba(232,238,248,.1); }
+  .stepper button { width: 46px; height: 46px; border: 0; background: none; color: #fff; font-size: 22px; font-weight: 700; cursor: pointer; border-radius: 8px; }
+  .stepper button:hover { background: rgba(232,238,248,.12); }
+  .stepper button:disabled { color: rgba(232,238,248,.3); background: none; cursor: default; }
+  .stepper output { min-width: 40px; text-align: center; font-size: 21px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .price { display: flex; align-items: baseline; gap: 8px; }
+  .price strong { font-size: 46px; }
+  .price span { color: var(--sky-muted); font-size: 15.5px; }
+  .ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+
+  /* Live feed */
+  .feed { position: relative; min-height: 400px; }
+  .feed-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 14px; }
+  .feed-head .where { font-size: 15px; color: var(--sky-muted); }
+  .feed-head .where b { color: #fff; font-weight: 700; }
+  .clock { font-size: 44px; font-variant-numeric: tabular-nums; color: #fff; }
+  .live { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: var(--lamp); }
+  .live i { width: 8px; height: 8px; border-radius: 50%; background: var(--lamp); box-shadow: 0 0 0 4px rgba(255,181,71,.2); }
+  .toasts { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .toast { display: grid; grid-template-columns: 38px 1fr auto; gap: 12px; align-items: start; padding: 13px 14px; border-radius: 12px; background: rgba(250,252,255,.96); color: var(--ink); box-shadow: 0 18px 40px -22px rgba(0,0,0,.7); }
+  .toast .ic { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; background: #E8F5E3; }
+  .toast .ic.call { background: #E5ECFA; } .toast .ic.mail { background: #F3EEE3; }
+  .toast .who { font-size: 13.5px; color: var(--ink-3); }
+  .toast .said { font-size: 16px; font-weight: 600; line-height: 1.3; margin-top: 1px; }
+  .toast .did { margin-top: 7px; display: inline-block; font-size: 13px; font-weight: 700; padding: 3px 9px; border-radius: 6px; background: #DDF1D5; color: #1F4D16; }
+  .toast .did.hot { background: var(--lamp); color: #3A2500; }
+  .toast time { font-size: 13px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+  .feed-foot { margin-top: 14px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 15px; color: var(--sky-muted); }
+  .feed-foot b { color: #fff; }
+  .replay { background: none; border: 0; color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; padding: 8px 0; }
+  @media (prefers-reduced-motion: no-preference) {
+    .toast.enter { animation: toastIn .45s cubic-bezier(.2,.8,.2,1) both; }
+    @keyframes toastIn { from { opacity: 0; transform: translateY(-10px) scale(.98); } to { opacity: 1; transform: none; } }
+  }
+
+  /* Facility */
+  .facility { position: relative; z-index: 1; }
+  .fascia { display: flex; justify-content: center; }
+  .fascia span { background: #F5F2E8; color: var(--ink); font-weight: 800; letter-spacing: .22em; font-size: 14px; padding: 6px 16px; border-radius: 3px 3px 0 0; }
+  .building { background: #3A4A63; padding: 14px 14px 0; border-radius: 6px 6px 0 0; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px; position: relative; }
+  .lamp-post { position: absolute; top: -150px; width: 6px; height: 150px; background: #2A3650; }
+  .lamp-post::before { content: ""; position: absolute; top: -6px; left: -20px; width: 40px; height: 10px; border-radius: 6px; background: #2A3650; }
+  .lamp-post::after { content: ""; position: absolute; top: 2px; left: -150px; width: 300px; height: 360px; background: radial-gradient(ellipse at 50% 0%, rgba(255,181,71,.32), transparent 62%); pointer-events: none; }
+  .lamp-post.l { left: 4%; } .lamp-post.r { right: 4%; }
+  .unit { position: relative; }
+  .plate { position: absolute; top: 6px; left: 50%; transform: translateX(-50%); z-index: 3; background: #F5F2E8; color: var(--ink); font-weight: 800; font-size: 12.5px; letter-spacing: .06em; padding: 1px 7px; border-radius: 3px; }
+  .opening { height: 190px; background: linear-gradient(180deg, #121A26, #0B1018); border-radius: 3px 3px 0 0; position: relative; overflow: hidden; }
+  .door { position: absolute; left: 0; right: 0; top: 0; height: 100%; background: repeating-linear-gradient(180deg, var(--door) 0 12px, var(--door-shade) 12px 14px); transition: height 1.1s cubic-bezier(.6,.05,.3,1); }
+  .door::after { content: ""; position: absolute; left: 50%; bottom: 12px; width: 30px; height: 5px; margin-left: -15px; border-radius: 3px; background: rgba(21,32,26,.35); }
+  .unit.open .door { height: 22%; }
+  .unit .box { position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%); opacity: 0; transition: opacity .4s .8s; }
+  .unit.open .box { opacity: 1; }
+  .unit .flag { position: absolute; z-index: 4; left: 50%; top: 52px; transform: translateX(-50%) rotate(-3deg); background: var(--lamp); color: #3A2500; font-weight: 800; font-size: 13px; padding: 5px 9px; border-radius: 4px; white-space: nowrap; opacity: 0; transition: opacity .3s 1s; box-shadow: 0 10px 20px -10px rgba(0,0,0,.6); }
+  .unit.open .flag { opacity: 1; }
+  .ground { height: 40px; background: #59606A; position: relative; }
+  .ground::after { content: ""; position: absolute; left: 0; right: 0; top: 18px; height: 4px; background: repeating-linear-gradient(90deg, var(--lamp) 0 44px, transparent 44px 76px); opacity: .75; }
+  @media (prefers-reduced-motion: reduce) { .door, .unit .box, .unit .flag { transition: none; } }
+
+  /* ===== Sections ===== */
+  section.band { padding: 88px 0; }
+  .band h2 { font-size: clamp(42px, 5vw, 72px); }
+  .band .kicker { font-size: 18px; color: var(--ink-2); margin-top: 14px; max-width: 32em; }
+
+  /* Renter demo */
+  .demo { background: #fff; }
+  .demo .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 64px; align-items: center; }
+  .demo ul.points { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 12px; font-size: 17px; }
+  .demo ul.points li { display: flex; gap: 12px; align-items: center; }
+  .demo ul.points li b { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; background: var(--concrete); font-size: 15px; }
+  .phone { width: 380px; height: 720px; border-radius: 46px; background: #10151D; padding: 12px; box-shadow: 0 40px 80px -40px rgba(13,24,48,.7); position: relative; }
+  .screen { width: 100%; height: 100%; border-radius: 36px; overflow: hidden; background: #EFEAE2; display: flex; flex-direction: column; }
+  .p-status { height: 40px; display: flex; justify-content: space-between; align-items: center; padding: 0 26px; font-size: 14px; font-weight: 700; background: #0F3B2E; color: #fff; }
+  .p-head { background: #0F3B2E; color: #fff; display: flex; align-items: center; gap: 12px; padding: 8px 16px 12px; }
+  .p-av { width: 40px; height: 40px; border-radius: 50%; background: var(--door); display: grid; place-items: center; color: var(--ink); font-weight: 800; }
+  .p-head b { display: block; font-size: 16px; }
+  .p-head small { font-size: 12.5px; color: #B9D6C8; }
+  .p-log { flex: 1; overflow-y: auto; padding: 14px 12px; display: flex; flex-direction: column; gap: 8px; }
+  .m { max-width: 82%; padding: 8px 11px 6px; border-radius: 10px; font-size: 15px; line-height: 1.38; position: relative; box-shadow: 0 1px 1px rgba(0,0,0,.08); white-space: pre-wrap; }
+  .m.in { background: #fff; align-self: flex-start; border-top-left-radius: 3px; }
+  .m.out { background: #D7F5C8; align-self: flex-end; border-top-right-radius: 3px; }
+  .m time { display: block; text-align: right; font-size: 11px; color: rgba(21,32,26,.5); margin-top: 2px; }
+  .dots { display: inline-flex; gap: 4px; padding: 4px 2px; }
+  .dots i { width: 7px; height: 7px; border-radius: 50%; background: #9AA39C; animation: blink 1s infinite; }
+  .dots i:nth-child(2) { animation-delay: .15s; } .dots i:nth-child(3) { animation-delay: .3s; }
+  @keyframes blink { 0%, 80%, 100% { opacity: .3; } 40% { opacity: 1; } }
+  .m, .card-res { flex: none; }
+  .card-res { align-self: flex-start; width: 82%; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 1px rgba(0,0,0,.08); }
+  .card-res .top { background: var(--lamp); color: #3A2500; font-weight: 800; padding: 8px 12px; font-size: 14px; }
+  .card-res dl { margin: 0; padding: 10px 12px; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 14px; }
+  .card-res dt { color: var(--ink-3); } .card-res dd { margin: 0; font-weight: 700; }
+  .card-res .pay { margin: 0 12px 12px; display: block; text-align: center; background: var(--ink); color: #fff; border-radius: 8px; padding: 9px; font-weight: 700; font-size: 14px; }
+  .p-chips { display: flex; gap: 6px; overflow-x: auto; padding: 4px 10px 8px; }
+  .p-chips button { flex: none; border: 0; background: #fff; color: #0F3B2E; font-weight: 700; font-size: 13.5px; padding: 8px 12px; border-radius: 999px; cursor: pointer; box-shadow: 0 1px 1px rgba(0,0,0,.1); }
+  .p-form { display: flex; gap: 8px; padding: 8px 10px 14px; }
+  .p-form input { flex: 1; min-width: 0; height: 46px; border-radius: 999px; border: 0; padding: 0 16px; font-size: 15.5px; background: #fff; }
+  .p-form button { width: 46px; height: 46px; border-radius: 50%; border: 0; background: #0F3B2E; color: #fff; cursor: pointer; display: grid; place-items: center; }
+  .p-form button:disabled { opacity: .5; }
+
+  /* Calculator */
+  .calc .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: start; }
+  .sliders { display: grid; gap: 22px; margin-top: 32px; }
+  .sl label { display: flex; justify-content: space-between; gap: 12px; font-weight: 600; font-size: 16px; }
+  .sl label output { font-weight: 800; font-variant-numeric: tabular-nums; }
+  .sl input[type=range] { width: 100%; margin-top: 10px; accent-color: var(--deep); height: 28px; }
+  .result { background: var(--ink); color: #fff; border-radius: 16px; padding: 34px; position: sticky; top: 24px; }
+  .result .lbl { color: #AEB9B1; font-size: 15px; }
+  .result .big { font-size: clamp(56px, 6vw, 88px); color: var(--lamp); margin: 6px 0 4px; }
+  .result .row { display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-top: 1px solid rgba(255,255,255,.12); font-size: 16px; }
+  .result .row:first-of-type { margin-top: 18px; }
+  .result .row b { font-variant-numeric: tabular-nums; }
+  .result .fine { color: #8D998F; font-size: 13px; margin-top: 14px; }
+
+  /* Proof + compare */
+  .proof { background: #fff; }
+  .proof .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: center; }
+  .stat em { font-style: normal; display: block; color: var(--deep); font-size: clamp(110px, 13vw, 190px); }
+  .stat span { display: block; font-size: clamp(30px, 3.4vw, 46px); margin-top: 6px; }
+  .src { font-size: 13.5px; color: var(--ink-3); margin-top: 12px; }
+  .compare { list-style: none; margin: 0; padding: 0; }
+  .compare li { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--concrete-2); align-items: baseline; }
+  .compare li:first-child { border-top: 2px solid var(--ink); }
+  .compare s { color: var(--ink-3); text-decoration-color: rgba(21,32,26,.35); }
+  .compare b { font-size: 20px; }
+  .quote { margin-top: 28px; font-size: 19px; }
+  .quote small { display: block; font-size: 14px; color: var(--ink-3); margin-top: 6px; }
+
+  /* Closing */
+  .closing { background: linear-gradient(180deg, #16264A, var(--sky-top)); color: var(--sky-text); }
+  .closing .wrap { display: flex; justify-content: space-between; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .closing h2 { font-size: clamp(42px, 5vw, 72px); max-width: 14ch; }
+  footer.site { background: var(--sky-top); color: var(--sky-muted); font-size: 14px; border-top: 1px solid rgba(232,238,248,.08); }
+  footer.site .wrap { padding-top: 22px; padding-bottom: 100px; display: flex; justify-content: space-between; gap: 10px 24px; flex-wrap: wrap; }
+  footer.site a { color: #fff; font-weight: 600; margin-left: 14px; }
+
+  /* Pricing assistant (owner questions) */
+  .ask { position: fixed; right: 22px; bottom: 22px; z-index: 50; display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 20px 0 14px; border-radius: 999px; border: 0; background: var(--lamp); color: #3A2500; font-weight: 800; font-size: 16px; cursor: pointer; box-shadow: 0 16px 34px -14px rgba(13,24,48,.7); }
+  .ask .av { width: 30px; height: 30px; border-radius: 50%; background: #3A2500; color: var(--lamp); display: grid; place-items: center; font-size: 15px; }
+  .chat { position: fixed; right: 22px; bottom: 22px; z-index: 60; width: min(410px, calc(100vw - 24px)); height: min(620px, calc(100vh - 44px)); background: #fff; border-radius: 16px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 30px 80px -24px rgba(13,24,48,.6), 0 0 0 1px rgba(21,32,26,.08); }
+  .chat[hidden] { display: none; }
+  .c-head { background: var(--sky-top); color: #fff; padding: 16px 14px 14px 18px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .c-head .id { display: flex; gap: 12px; align-items: center; }
+  .c-head .av { width: 40px; height: 40px; border-radius: 50%; background: var(--lamp); color: #3A2500; display: grid; place-items: center; font-weight: 800; }
+  .c-head h2 { font-size: 17px; font-weight: 800; }
+  .c-head p { font-size: 12.5px; color: var(--sky-muted); display: flex; align-items: center; gap: 6px; }
+  .c-head p i { width: 7px; height: 7px; border-radius: 50%; background: var(--door); }
+  .c-close { width: 40px; height: 40px; border-radius: 10px; border: 0; background: rgba(255,255,255,.1); color: #fff; font-size: 22px; cursor: pointer; }
+  .c-log { flex: 1; overflow-y: auto; padding: 18px 14px; display: flex; flex-direction: column; gap: 10px; background: #F6F7F4; }
+  .b { max-width: 86%; padding: 10px 13px; border-radius: 14px; font-size: 15.5px; line-height: 1.45; white-space: pre-wrap; }
+  .b.bot { background: #fff; border: 1px solid var(--concrete-2); align-self: flex-start; border-bottom-left-radius: 4px; }
+  .b.me { background: var(--sky-top); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+  .c-chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 14px 12px; background: #F6F7F4; }
+  .c-chips button { border: 1.5px solid var(--sky-top); background: #fff; color: var(--sky-top); border-radius: 999px; padding: 7px 12px; font-size: 14px; font-weight: 700; cursor: pointer; min-height: 38px; }
+  .c-form { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--concrete-2); }
+  .c-form input { flex: 1; min-width: 0; height: 48px; border: 1.5px solid var(--concrete-2); border-radius: 10px; padding: 0 12px; font-size: 16px; }
+  .c-form button { height: 48px; padding: 0 16px; border-radius: 10px; border: 0; background: var(--sky-top); color: #fff; font-weight: 700; cursor: pointer; }
+  .c-form button:disabled { opacity: .5; }
+  .c-note { font-size: 12px; color: var(--ink-3); padding: 0 14px 10px; }
+
+  /* Responsive */
+  @media (max-width: 1340px) { .moon { display: none; } }
+  @media (max-width: 1040px) {
+    nav.main { display: none; }
+    .hero { grid-template-columns: 1fr; gap: 36px; }
+    .feed { min-height: 0; }
+    .building { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .building .unit:nth-of-type(n+7) { display: none; }
+    .demo .wrap, .calc .wrap, .proof .wrap { grid-template-columns: 1fr; gap: 44px; }
+    .phone { margin: 0 auto; }
+    .result { position: static; }
+  }
+  @media (max-width: 600px) {
+    .wrap { padding: 0 18px; }
+    header.site .watch { display: none; }
+    .ctas .btn { flex: 1 1 100%; }
+    .clock { font-size: 34px; }
+    .building { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 10px 0; }
+    .building .unit:nth-of-type(n+5) { display: none; }
+    .opening { height: 130px; }
+    .unit .flag { top: 34px; font-size: 11.5px; left: auto; right: -2px; transform: rotate(-3deg); }
+    .lamp-post { display: none; }
+    section.band { padding: 64px 0; }
+    .phone { width: 100%; max-width: 360px; height: 640px; }
+    .result { padding: 26px; }
+    .closing .btn { flex: 1 1 100%; }
+    .chat { right: 12px; bottom: 12px; height: calc(100vh - 24px); }
+    .ask { right: 14px; bottom: 14px; }
+  }
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<div class="concept" role="note"><div class="wrap">
+  <span>Concept by Shruti Vanparia. Not affiliated with Landlord.</span>
+  <a href="https://uselandlord.com/pricing">See the real pricing page</a>
+</div></div>
+
+<!-- ===== Night hero ===== -->
+<div class="night">
+  <div class="stars" aria-hidden="true"></div>
+  <div class="moon" aria-hidden="true"></div>
+
+  <header class="site"><div class="wrap">
+    <a class="wordmark" href="https://uselandlord.com/" aria-label="Landlord home"><i aria-hidden="true"></i>Landlord</a>
+    <nav class="main" aria-label="Main">
+      <a href="https://uselandlord.com/">AI Employees</a>
+      <a href="https://uselandlord.com/about">Our Story</a>
+      <a href="https://uselandlord.com/success-stories">Success Stories</a>
+      <a href="#" aria-current="page">Pricing</a>
+    </nav>
+    <div style="display:flex; gap:10px;">
+      <a class="btn btn-ghost watch" href="https://uselandlord.com/">Watch me build an AI</a>
+      <a class="btn btn-door" href="https://uselandlord.com/contact">Book a demo</a>
+    </div>
+  </div></header>
+
+  <main id="main">
+  <div class="wrap hero">
+    <div>
+      <h1 class="disp" id="headline"><span>A night shift</span><span class="lamp" id="h-2">for $300</span><span id="h-3">a month.</span></h1>
+      <p class="sub">Every call, WhatsApp, email and chat answered. Day and night.</p>
+
+      <div class="pricebar">
+        <p class="q" id="q-fac">How many facilities do you run?</p>
+        <div class="stepper" role="group" aria-labelledby="q-fac">
+          <button type="button" id="minus" aria-label="One fewer facility">&minus;</button>
+          <output id="fac" aria-live="polite">1</output>
+          <button type="button" id="plus" aria-label="One more facility">+</button>
+        </div>
+        <div class="price" aria-live="polite"><strong class="disp" id="amt">$300</strong><span id="amt-d">a month for 1 to 5 facilities</span></div>
+      </div>
+
+      <div class="ctas">
+        <a class="btn btn-door" id="cta" href="https://uselandlord.com/contact">Book a demo</a>
+        <a class="btn btn-ghost" href="#try">Text the demo facility</a>
+      </div>
+    </div>
+
+    <div class="feed" aria-labelledby="feed-title">
+      <div class="feed-head">
+        <div>
+          <p class="where" id="feed-title">Tonight at <b>Northgate Storage</b></p>
+          <p class="clock disp" id="clock" aria-live="off">23:30</p>
+        </div>
+        <span class="live" id="live"><i aria-hidden="true"></i><span id="live-t">AI on shift</span></span>
+      </div>
+      <ol class="toasts" id="toasts" aria-live="polite"></ol>
+      <div class="feed-foot"><span id="tally"><b>0</b> answered, <b>0</b> missed</span><button class="replay" id="replay" type="button">Replay the night</button></div>
+    </div>
+  </div>
+  </main>
+
+  <div class="facility" aria-hidden="true">
+    <div class="wrap">
+      <div class="fascia"><span>NORTHGATE STORAGE</span></div>
+      <div class="building" id="building">
+        <span class="lamp-post l"></span><span class="lamp-post r"></span>
+      </div>
+    </div>
+    <div class="ground"></div>
+  </div>
+</div>
+
+<!-- ===== Renter demo ===== -->
+<section class="band demo" id="try" aria-labelledby="try-title">
+  <div class="wrap">
+    <div>
+      <h2 class="disp" id="try-title">It's 2am. Text the facility.</h2>
+      <p class="kicker">Be the renter. The AI answers, sizes your stuff and reserves a unit.</p>
+      <ul class="points">
+        <li><b>1</b>Ask what fits a sofa</li>
+        <li><b>2</b>Ask about prices or access hours</li>
+        <li><b>3</b>Say "reserve it"</li>
+      </ul>
+    </div>
+    <div class="phone" role="region" aria-label="Chat with the demo facility">
+      <div class="screen">
+        <div class="p-status"><span>2:14</span><span aria-hidden="true">●●● 5G</span></div>
+        <div class="p-head"><div class="p-av" aria-hidden="true">N</div><div><b>Northgate Storage</b><small>AI assistant, demo facility</small></div></div>
+        <div class="p-log" id="p-log" aria-live="polite"></div>
+        <div class="p-chips" id="p-chips"></div>
+        <form class="p-form" id="p-form">
+          <label for="p-in" class="sr-only">Message Northgate Storage</label>
+          <input id="p-in" type="text" autocomplete="off" placeholder="Message" maxlength="300">
+          <button type="submit" id="p-send" aria-label="Send"><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10l14-7-5 14-2.5-5.5z" fill="#fff"/></svg></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Calculator ===== -->
+<section class="band calc" aria-labelledby="calc-title">
+  <div class="wrap">
+    <div>
+      <h2 class="disp" id="calc-title">What are missed calls costing you?</h2>
+      <p class="kicker">Move the sliders to match your facility.</p>
+      <div class="sliders">
+        <div class="sl"><label for="s-enq">After-hours enquiries a month <output id="o-enq">40</output></label><input type="range" id="s-enq" min="0" max="300" step="5" value="40"></div>
+        <div class="sl"><label for="s-miss">Share you can't answer today <output id="o-miss">50%</output></label><input type="range" id="s-miss" min="0" max="100" step="5" value="50"></div>
+        <div class="sl"><label for="s-conv">Enquiries that become rentals <output id="o-conv">25%</output></label><input type="range" id="s-conv" min="5" max="80" step="5" value="25"></div>
+        <div class="sl"><label for="s-rent">Average monthly rent <output id="o-rent">$120</output></label><input type="range" id="s-rent" min="30" max="400" step="10" value="120"></div>
+        <div class="sl"><label for="s-stay">Average stay in months <output id="o-stay">10</output></label><input type="range" id="s-stay" min="1" max="36" step="1" value="10"></div>
+      </div>
+    </div>
+    <div class="result" aria-live="polite">
+      <p class="lbl">Rent you could be missing each month</p>
+      <p class="big disp" id="r-big">$12,000</p>
+      <p class="lbl" id="r-sub">from 5 rentals that go elsewhere</p>
+      <div class="row"><span>Landlord</span><b>$300 a month</b></div>
+      <div class="row"><span>Night staff</span><b>$2,000 to $3,000 a month</b></div>
+      <div class="row"><span>Rentals needed to cover Landlord</span><b id="r-be">1</b></div>
+      <p class="fine">Estimates from the numbers you enter. Staff cost from uselandlord.com.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Proof ===== -->
+<section class="band proof" aria-label="Why answering matters">
+  <div class="wrap">
+    <div>
+      <p class="stat disp"><em>57%</em><span>of renters only contact one facility.</span></p>
+      <p class="src">SSA Demand Study 2025, via the Self-Storage Almanac 2026</p>
+    </div>
+    <div>
+      <ul class="compare" aria-label="Night staff compared with Landlord">
+        <li><s>$2,000+ a month</s><b>$300 a month</b></li>
+        <li><s>One call at a time</s><b>Unlimited calls</b></li>
+        <li><s>One or two languages</s><b>Every language</b></li>
+        <li><s>Knows what they remember</s><b>Knows your whole business</b></li>
+      </ul>
+      <p class="quote">"They end up going with someone else who does answer the phone."<small>James Bonny, owner of Bonny's Self Storage</small></p>
+    </div>
+  </div>
+</section>
+
+<section class="band closing" aria-labelledby="close-title">
+  <div class="wrap">
+    <h2 class="disp" id="close-title">While you sleep, your AI sells.</h2>
+    <div class="ctas" style="margin-top:0;">
+      <a class="btn btn-door" href="https://uselandlord.com/contact">Book a demo</a>
+      <button class="btn btn-ghost" type="button" data-open-ask>Ask a question</button>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><div class="wrap">
+  <span>Concept by Shruti Vanparia. Not affiliated with Landlord. Northgate Storage is a made-up demo facility.</span>
+  <span><a href="https://github.com/ShrutiVan17">GitHub</a><a href="https://linkedin.com/in/shruti-17s">LinkedIn</a></span>
+</div></footer>
+
+<!-- Pricing assistant -->
+<button class="ask" id="ask" type="button" aria-controls="chat" aria-expanded="false"><span class="av" aria-hidden="true">?</span>Ask about pricing</button>
+<section class="chat" id="chat" role="dialog" aria-labelledby="c-title" hidden>
+  <div class="c-head">
+    <div class="id"><div class="av" aria-hidden="true">L</div><div><h2 id="c-title">Pricing assistant</h2><p><i aria-hidden="true"></i><span id="c-mode">Online</span></p></div></div>
+    <button class="c-close" id="c-close" type="button" aria-label="Close the pricing assistant">&times;</button>
+  </div>
+  <div class="c-log" id="c-log" aria-live="polite"></div>
+  <div class="c-chips" id="c-chips"></div>
+  <form class="c-form" id="c-form">
+    <label for="c-in" class="sr-only">Your question</label>
+    <input id="c-in" type="text" autocomplete="off" placeholder="Ask about price, setup, software..." maxlength="300">
+    <button type="submit" id="c-send">Send</button>
+  </form>
+  <p class="c-note">Demo assistant. Answers come from uselandlord.com.</p>
+</section>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+
+  /* ---------- Facility picker ---------- */
+  var count = 1;
+  function renderPrice() {
+    $('fac').textContent = count;
+    $('minus').disabled = count <= 1; $('plus').disabled = count >= 30;
+    if (count <= 5) {
+      $('h-2').textContent = 'for $300'; $('h-3').textContent = 'a month.';
+      $('amt').textContent = '$300'; $('amt-d').textContent = 'a month for 1 to 5 facilities';
+      $('cta').textContent = 'Book a demo';
+    } else {
+      $('h-2').textContent = 'for every'; $('h-3').textContent = 'facility.';
+      $('amt').textContent = 'Custom'; $('amt-d').textContent = 'one price for ' + count + ' facilities';
+      $('cta').textContent = 'Get a quote';
+    }
+  }
+  $('minus').onclick = function () { if (count > 1) { count--; renderPrice(); } };
+  $('plus').onclick = function () { if (count < 30) { count++; renderPrice(); } };
+  renderPrice();
+
+  /* ---------- Facility building ---------- */
+  var building = $('building');
+  var sofa = '<svg class="box" width="70" height="36" viewBox="0 0 92 46" aria-hidden="true"><rect x="4" y="14" width="84" height="22" rx="5" fill="#8C978C"/><rect x="0" y="10" width="14" height="30" rx="5" fill="#9DA89C"/><rect x="78" y="10" width="14" height="30" rx="5" fill="#9DA89C"/><rect x="14" y="4" width="64" height="16" rx="5" fill="#A9B3A8"/></svg>';
+  var units = ['A01','A02','A03','A04','A05','A06','A07','A08'];
+  units.forEach(function (u) {
+    var d = document.createElement('div'); d.className = 'unit'; d.id = 'u-' + u;
+    d.innerHTML = '<span class="plate">' + u + '</span><div class="opening"><div class="door"></div>' + (u === 'A04' ? sofa : '') + '</div>' + (u === 'A04' ? '<span class="flag">Reserved 23:44</span>' : '');
+    building.appendChild(d);
+  });
+
+  /* ---------- The night, played once on load and on replay ---------- */
+  var ICON = {
+    wa: '<svg width="20" height="20" viewBox="0 0 16 16"><path d="M8 1.5a6.5 6.5 0 0 0-5.6 9.8L1.5 14.5l3.3-.9A6.5 6.5 0 1 0 8 1.5z" stroke="#2F6B22" stroke-width="1.5" fill="none"/></svg>',
+    mail: '<svg width="20" height="20" viewBox="0 0 16 16"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5" stroke="#7A5B1F" stroke-width="1.5" fill="none"/><path d="M2 4.5l6 4.5 6-4.5" stroke="#7A5B1F" stroke-width="1.5" fill="none"/></svg>',
+    call: '<svg width="20" height="20" viewBox="0 0 16 16"><path d="M4.5 1.8l2 3-1.3 1.6a8 8 0 0 0 4.4 4.4l1.6-1.3 3 2-.9 2.3c-5.4.4-11-5.2-10.6-10.6z" stroke="#2C4A86" stroke-width="1.5" fill="none" stroke-linejoin="round"/></svg>'
+  };
+  var NIGHT = [
+    { t: '23:36', ch: 'wa',   who: 'Tom Hughes, WhatsApp', said: '"Saw a half price offer online"', did: 'Quote sent' },
+    { t: '23:38', ch: 'mail', who: 'Sophie Hall, email',   said: '"Moving out in 2 weeks, what do I do?"', did: 'Move-out steps sent' },
+    { t: '23:44', ch: 'wa',   who: 'Priya Shah, WhatsApp', said: '"Do you have space for this sofa?"', did: 'Unit A04 reserved', hot: true, door: 'A04' },
+    { t: '23:46', ch: 'call', who: 'Dan Reid, tenant, called', said: 'Question about his unit', did: 'Call answered' }
+  ];
+  var timers = [];
+  function clearNight() {
+    timers.forEach(clearTimeout); timers = [];
+    $('toasts').innerHTML = ''; $('clock').textContent = '23:30';
+    $('tally').innerHTML = '<b>0</b> answered, <b>0</b> missed';
+    document.querySelectorAll('.unit.open').forEach(function (u) { u.classList.remove('open'); });
+  }
+  function addToast(e, animate) {
+    var li = document.createElement('li'); li.className = 'toast' + (animate ? ' enter' : '');
+    li.innerHTML = '<span class="ic ' + (e.ch === 'call' ? 'call' : e.ch === 'mail' ? 'mail' : '') + '" aria-hidden="true">' + ICON[e.ch] + '</span>' +
+      '<div><p class="who">' + esc(e.who) + '</p><p class="said">' + esc(e.said) + '</p><span class="did' + (e.hot ? ' hot' : '') + '">' + esc(e.did) + '</span></div><time>' + e.t + '</time>';
+    $('toasts').insertBefore(li, $('toasts').firstChild);
+  }
+  function step(i, animate) {
+    var e = NIGHT[i];
+    $('clock').textContent = e.t;
+    addToast(e, animate);
+    $('tally').innerHTML = '<b>' + (i + 1) + '</b> answered, <b>0</b> missed';
+    if (e.door) $('u-' + e.door).classList.add('open');
+  }
+  function playNight() {
+    clearNight();
+    if (reduce) { NIGHT.forEach(function (_, i) { step(i, false); }); return; }
+    NIGHT.forEach(function (_, i) { timers.push(setTimeout(function () { step(i, true); }, 700 + i * 1500)); });
+  }
+  $('replay').onclick = playNight;
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (es) { if (es.some(function (x) { return x.isIntersecting; })) { playNight(); io.disconnect(); } }, { threshold: 0.25 });
+    io.observe($('toasts'));
+  } else { playNight(); }
+
+  /* ---------- Calculator ---------- */
+  var fmt = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+  function calc() {
+    var enq = +$('s-enq').value, miss = +$('s-miss').value / 100, conv = +$('s-conv').value / 100, rent = +$('s-rent').value, stay = +$('s-stay').value;
+    $('o-enq').textContent = enq; $('o-miss').textContent = Math.round(miss * 100) + '%'; $('o-conv').textContent = Math.round(conv * 100) + '%';
+    $('o-rent').textContent = fmt(rent); $('o-stay').textContent = stay;
+    var lost = enq * miss * conv;
+    var value = lost * rent * stay;
+    $('r-big').textContent = fmt(value);
+    var r = Math.round(lost * 10) / 10;
+    $('r-sub').textContent = 'in future rent, from about ' + r + ' rental' + (r === 1 ? '' : 's') + ' that go elsewhere';
+    var be = Math.ceil(300 / (rent * stay) * 10) / 10;
+    $('r-be').textContent = be <= 1 ? 'Less than 1' : String(be);
+  }
+  ['s-enq','s-miss','s-conv','s-rent','s-stay'].forEach(function (id) { $(id).addEventListener('input', calc); });
+  calc();
+
+  /* ---------- Claude, when the page is allowed to use it ---------- */
+  var sample = null;
+  if (window.claude && typeof window.claude.use === 'function') {
+    window.claude.use('sample').then(function (s) { sample = s || null; if (sample) $('c-mode').textContent = 'Online, powered by Claude'; }).catch(function () { sample = null; });
+  }
+
+  /* ---------- Renter demo: the AI employee of a made-up facility ---------- */
+  var SIZES = {
+    '5x5':   { price: 45,  fits: 'boxes, a bike or a few small items' },
+    '5x10':  { price: 79,  fits: 'a sofa, a mattress and some boxes' },
+    '10x10': { price: 129, fits: 'a one-bedroom apartment' },
+    '10x20': { price: 219, fits: 'a three-bedroom house' }
+  };
+  var nextUnit = { '5x5': 'B07', '5x10': 'A04', '10x10': 'C12', '10x20': 'D03' };
+  var pLog = $('p-log'), pIn = $('p-in'), pSend = $('p-send'), pChips = $('p-chips');
+  var pHistory = [], pBusy = false, pending = null;
+  function now() { return '2:' + String(14 + Math.min(pHistory.length, 40)).padStart(2, '0'); }
+  function pMsg(text, side) {
+    var m = document.createElement('div'); m.className = 'm ' + side;
+    m.innerHTML = esc(text) + '<time>' + now() + '</time>'; pLog.appendChild(m); pLog.scrollTop = pLog.scrollHeight; return m;
+  }
+  function pTyping() { var m = document.createElement('div'); m.className = 'm in'; m.innerHTML = '<span class="dots" aria-label="typing"><i></i><i></i><i></i></span>'; pLog.appendChild(m); pLog.scrollTop = pLog.scrollHeight; return m; }
+  function reserve(size) {
+    var s = SIZES[size]; if (!s) return null;
+    var unit = nextUnit[size];
+    var c = document.createElement('div'); c.className = 'card-res';
+    c.innerHTML = '<div class="top">Unit ' + unit + ' reserved</div><dl><dt>Size</dt><dd>' + size + '</dd><dt>Price</dt><dd>$' + s.price + ' a month</dd><dt>Gate code</dt><dd>Sent after payment</dd></dl><span class="pay">Payment link sent</span>';
+    pLog.appendChild(c); pLog.scrollTop = pLog.scrollHeight;
+    var el = document.getElementById('u-A04'); if (size === '5x10' && el) el.classList.add('open');
+    return { unit: unit, size: size, price_per_month: s.price, payment_link: 'sent by text' };
+  }
+  function findSize(t) {
+    if (/10\s*x\s*20|house|3[ -]?bed|three/.test(t)) return '10x20';
+    if (/10\s*x\s*10|apartment|1[ -]?bed|one[ -]?bed|flat/.test(t)) return '10x10';
+    if (/5\s*x\s*10|sofa|couch|mattress|furniture/.test(t)) return '5x10';
+    if (/5\s*x\s*5|box|boxes|bike|small/.test(t)) return '5x5';
+    return null;
+  }
+  function renterLocal(q) {
+    var t = q.toLowerCase(), size = findSize(t);
+    if (/reserve|book|hold|rent it|take it|i'?ll take|yes/.test(t) || (pending === 'reserve' && size)) {
+      var sz = size || (pending && pending !== 'reserve' ? pending : null);
+      if (!sz) { pending = 'reserve'; return { text: 'Happy to. Which size: 5x5, 5x10, 10x10 or 10x20?' }; }
+      pending = null; return { text: 'Done! Here is your reservation.', reserve: sz };
+    }
+    if (size) { pending = size; return { text: 'A ' + size + ' fits ' + SIZES[size].fits + '. It is $' + SIZES[size].price + ' a month. Want me to reserve one?' }; }
+    if (/price|cost|how much|cheap|rate/.test(t)) return { text: '5x5 $45, 5x10 $79, 10x10 $129, 10x20 $219, all per month. What are you storing?' };
+    if (/hour|access|open|gate|when/.test(t)) return { text: 'Gate access is 6am to 10pm every day with your own code. The office is open 9 to 6, Monday to Saturday.' };
+    if (/move out|cancel|leave/.test(t)) return { text: 'Just give 10 days notice by text or email and empty the unit by your last day. I can set that up now.' };
+    if (/insur|secur|camera|safe/.test(t)) return { text: 'The site has gated access and 24/7 cameras. Insurance is available from $9 a month.' };
+    if (/hi|hello|hey/.test(t)) return { text: 'Hi! What are you looking to store?' };
+    return { text: 'I can help with sizes, prices, access and reserving a unit. Anything else, a team member will reply in the morning.' };
+  }
+  var FACILITY = 'You are the AI assistant for Northgate Storage, a made-up demo self-storage facility, texting with a renter at 2am. ' +
+    'Facts: unit sizes and monthly prices: 5x5 $45 (boxes, a bike), 5x10 $79 (a sofa, a mattress and boxes), 10x10 $129 (a one-bedroom apartment), 10x20 $219 (a three-bedroom house). ' +
+    'Gate access 6am to 10pm daily with a personal code. Office 9 to 6, Monday to Saturday. 24/7 cameras. Insurance from $9 a month. Move-out needs 10 days notice. ' +
+    'Style: a friendly text message, 1 or 2 short sentences, no lists, no emoji. Suggest a size from what they store. ' +
+    'When the renter clearly wants to reserve, call the reserve_unit tool with the size, then confirm in one sentence. Never invent other facts; say the team will reply in the morning.';
+  function pAsk(q) {
+    q = (q || '').trim(); if (!q || pBusy) return;
+    pBusy = true; pSend.disabled = true; pChips.innerHTML = '';
+    pMsg(q, 'out'); pIn.value = '';
+    var typing = pTyping();
+    function finish(text, size) {
+      typing.remove(); pMsg(text, 'in');
+      if (size) reserve(size);
+      pHistory.push({ role: 'user', content: q }, { role: 'assistant', content: text });
+      pBusy = false; pSend.disabled = false; renderPChips(); pIn.focus();
+    }
+    if (sample) {
+      var msgs = [{ role: 'user', content: FACILITY + '\n\nThe renter\'s first message follows.' }, { role: 'assistant', content: 'Understood.' }]
+        .concat(pHistory.slice(-8)).concat([{ role: 'user', content: q }]);
+      var reserved = false;
+      sample(msgs, { modelTier: 'quick', cache: false, tools: [{
+        name: 'reserve_unit', description: 'Reserve a storage unit for the renter and send a payment link.',
+        inputSchema: { type: 'object', properties: { size: { type: 'string', enum: Object.keys(SIZES) } }, required: ['size'] },
+        execute: function (input) { reserved = true; typing.remove(); var r = reserve(input && input.size); typing = pTyping(); if (!r) throw new Error('Unknown size'); return r; }
+      }] }).then(function (r) { finish((r && r.text || '').trim() || 'Sorry, could you say that again?'); })
+        .catch(function (err) { if (err && err.code === 'not_granted') sample = null; var l = renterLocal(q); finish(l.text, reserved ? null : l.reserve); });
+    } else {
+      setTimeout(function () { var l = renterLocal(q); finish(l.text, l.reserve); }, 800);
+    }
+  }
+  function renderPChips() {
+    var opts = pending && pending !== 'reserve' ? ['Reserve it', 'Something bigger', 'Access hours'] : ['What fits a sofa?', 'Prices?', 'Access hours?', 'Reserve a unit'];
+    pChips.innerHTML = '';
+    opts.forEach(function (o) { var b = document.createElement('button'); b.type = 'button'; b.textContent = o; b.onclick = function () { pAsk(o === 'Something bigger' ? 'I need something bigger, for a one-bedroom apartment' : o); }; pChips.appendChild(b); });
+  }
+  $('p-form').addEventListener('submit', function (e) { e.preventDefault(); pAsk(pIn.value); });
+  pMsg('Hi, this is Northgate Storage. How can I help tonight?', 'in');
+  renderPChips();
+
+  /* ---------- Pricing assistant: owner questions about Landlord ---------- */
+  var FACTS = [
+    { q: 'How much does Landlord cost?', k: ['cost','price','pricing','much','pay','monthly','month','$','expensive','cheap','plan'], a: '$300 a month for 1 to 5 facilities. Over 5, the price is custom. No setup fees and no lock-in contracts.' },
+    { q: 'Any setup fees or contracts?', k: ['setup fee','contract','lock','cancel','commit','hidden'], a: 'No setup fees and no lock-in contracts. Calls, WhatsApps and emails are unlimited.' },
+    { q: 'How long does setup take?', k: ['long','setup','set up','onboard','start','live','launch','days'], a: 'A 30-minute planning call, then usually a few days. It learns from your website, prices and call transcripts, and rehearses 1,000 sales conversations before going live.' },
+    { q: 'What does it answer?', k: ['answer','channel','call','phone','whatsapp','email','chat','text'], a: 'Phone calls, WhatsApps, emails and website chat, during your hours or 24/7. You get a short report of what happened.' },
+    { q: 'Does it work with my software?', k: ['software','sitelink','storeganise','stora','kinnovis','integrat','tool','system','store it','space manager','quickbooks','stripe'], a: 'It learns the software you already use, like SiteLink, Stora, Storeganise, Kinnovis, Space Manager, Store IT, Stripe and QuickBooks. With Storeganise it can book units and send payment links.' },
+    { q: 'Can it book units?', k: ['book','reserve','payment','move in','move-in'], a: 'Yes, where your system allows it. With Storeganise it books the unit, sends a payment link and tells you about the move-in.' },
+    { q: 'How do I give it tasks?', k: ['task','instruct','tell it','manage','adjust','coach','train'], a: 'Email, WhatsApp or call it like a coworker. Your notes apply right away.' },
+    { q: 'Is my data secure?', k: ['secure','security','safe','data','privacy','gdpr'], a: 'It runs on its own secure server and only trusted team members can give it instructions. Landlord also offers a GDPR data processing agreement.' },
+    { q: 'What else can it do?', k: ['else','other','debt','collect','overdue','ads','seo','aeo','marketing','analyst'], a: 'Landlord also has AI employees for collecting overdue rent, Google Ads, AEO and SEO marketing, and data analysis.' },
+    { q: 'Does it work?', k: ['work','results','proof','occupancy','customers','success'], a: 'Landlord shares case studies of owners going from 36% to 98% occupancy in 10 months, and 54.2% to 80.9% in a year.' },
+    { q: 'Who is behind Landlord?', k: ['who','founder','team','company','hunter','scout'], a: 'Hunter Webb, who bought his first storage facility at 17, and Scout Hawkey, who built AI at Garmin.' },
+    { q: 'How do I contact them?', k: ['contact','support','reach','human','person','demo'], a: 'Book a demo at uselandlord.com, email support@uselandlord.com or call +1 (469) 717-6961.' }
+  ];
+  var FALLBACK = "I don't have that detail. Book a demo or email support@uselandlord.com.";
+  var chat = $('chat'), ask = $('ask'), cLog = $('c-log'), cChips = $('c-chips'), cIn = $('c-in'), cSend = $('c-send');
+  var cHistory = [], cBusy = false, greeted = false;
+  function cBubble(text, who) { var b = document.createElement('div'); b.className = 'b ' + who; b.textContent = text; cLog.appendChild(b); cLog.scrollTop = cLog.scrollHeight; return b; }
+  function cChipsRender() {
+    cChips.innerHTML = '';
+    ['How much does Landlord cost?', 'How long does setup take?', 'Does it work with my software?'].forEach(function (q) {
+      var c = document.createElement('button'); c.type = 'button'; c.textContent = q; c.onclick = function () { cAsk(q); }; cChips.appendChild(c);
+    });
+  }
+  function openAsk() { chat.hidden = false; ask.hidden = true; ask.setAttribute('aria-expanded', 'true'); if (!greeted) { cBubble('Hi! Ask me about pricing or setup.', 'bot'); cChipsRender(); greeted = true; } cIn.focus(); }
+  function closeAsk() { chat.hidden = true; ask.hidden = false; ask.setAttribute('aria-expanded', 'false'); ask.focus(); }
+  ask.onclick = openAsk; $('c-close').onclick = closeAsk;
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !chat.hidden) closeAsk(); });
+  document.querySelectorAll('[data-open-ask]').forEach(function (el) { el.addEventListener('click', openAsk); });
+  function local(q) {
+    var t = ' ' + q.toLowerCase() + ' ', best = null, score = 0;
+    FACTS.forEach(function (f) { var s = f.q.toLowerCase() === q.toLowerCase().trim() ? 100 : 0; f.k.forEach(function (w) { if (t.indexOf(w) !== -1) s += w.length > 4 ? 2 : 1; }); if (s > score) { score = s; best = f; } });
+    return score >= 2 ? best.a : FALLBACK;
+  }
+  function typeOut(el, text, done) {
+    if (reduce) { el.textContent = text; done(); return; }
+    var i = 0; el.textContent = '';
+    (function tick() { i += 3; el.textContent = text.slice(0, i); cLog.scrollTop = cLog.scrollHeight; if (i < text.length) setTimeout(tick, 16); else done(); })();
+  }
+  function cAsk(q) {
+    q = (q || '').trim(); if (!q || cBusy) return;
+    cBusy = true; cSend.disabled = true; cChips.innerHTML = '';
+    cBubble(q, 'me'); cIn.value = '';
+    var r = cBubble('', 'bot'); r.innerHTML = '<span class="dots" aria-label="typing"><i></i><i></i><i></i></span>';
+    function done(text) { cHistory.push({ role: 'user', content: q }, { role: 'assistant', content: text }); cBusy = false; cSend.disabled = false; cIn.focus(); }
+    if (sample) {
+      var facts = FACTS.map(function (f) { return '- ' + f.a; }).join('\n');
+      var prompt = 'You answer questions on a concept redesign of the Landlord pricing page. Landlord sells AI employees to self-storage operators.\nAnswer ONLY from these facts:\n' + facts +
+        '\nRules: plain text, 1 or 2 short sentences, friendly. Never invent prices, features or numbers. If the facts do not cover it, say you do not have that detail and suggest booking a demo or emailing support@uselandlord.com.';
+      var msgs = [{ role: 'user', content: prompt }, { role: 'assistant', content: 'Understood.' }].concat(cHistory.slice(-6)).concat([{ role: 'user', content: q }]);
+      sample(msgs, { modelTier: 'quick', cache: false, onText: function (p) { if (p && p.text) { r.textContent = p.text; cLog.scrollTop = cLog.scrollHeight; } } })
+        .then(function (x) { var t = (x && x.text || '').trim() || local(q); r.textContent = t; done(t); })
+        .catch(function (err) { if (err && err.code === 'not_granted') sample = null; var t = local(q); typeOut(r, t, function () { done(t); }); });
+    } else {
+      setTimeout(function () { var t = local(q); typeOut(r, t, function () { done(t); }); }, 600);
+    }
+  }
+  $('c-form').addEventListener('submit', function (e) { e.preventDefault(); cAsk(cIn.value); });
+})();
+</script>
+</body>
+</html>
