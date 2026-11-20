@@ -520,10 +520,13 @@
     NIGHT.forEach(function (_, i) { timers.push(setTimeout(function () { step(i, true); }, 700 + i * 1500)); });
   }
   $('replay').onclick = playNight;
+  var started = false;
+  function startOnce() { if (!started) { started = true; playNight(); } }
   if ('IntersectionObserver' in window && !reduce) {
-    var io = new IntersectionObserver(function (es) { if (es.some(function (x) { return x.isIntersecting; })) { playNight(); io.disconnect(); } }, { threshold: 0.25 });
-    io.observe($('toasts'));
-  } else { playNight(); }
+    var io = new IntersectionObserver(function (es) { if (es.some(function (x) { return x.isIntersecting; })) { startOnce(); io.disconnect(); } }, { threshold: 0.2 });
+    io.observe(document.querySelector('.feed'));
+    setTimeout(startOnce, 1500);
+  } else { startOnce(); }
 
   /* ---------- Calculator ---------- */
   var fmt = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
